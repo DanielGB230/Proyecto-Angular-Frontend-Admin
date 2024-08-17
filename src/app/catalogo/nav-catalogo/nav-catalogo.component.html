@@ -1,0 +1,138 @@
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img class="h-11 rounded-full" src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-1/433194169_398786869442229_2066641971969670795_n.jpg?stp=dst-jpg_p200x200&_nc_cat=109&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeHD_VFzepmfARaGLrE9a6E19Ozcfwrfly707Nx_Ct-XLjG8gayVzxtZpK4izNA8iPfUCMpG1651Xce2fPv4LaNT&_nc_ohc=edH0rD411-UQ7kNvgHIJRAm&_nc_ht=scontent-lim1-1.xx&oh=00_AYAxVdvGM8ufY5PyGLbKC4nu1fGRQcdEBWhluIB0V6MCnA&oe=66C542FC"  alt="Flowbite Logo" />
+          <div class="relative-container"> <!-- Contenedor relativo para el botón y el menú -->
+              <button type="button"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  id="categories-button" aria-expanded="false" data-dropdown-toggle="categories-dropdown"
+                  data-dropdown-placement="bottom">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                      stroke="currentColor" class="w-6 h-6 mr-1">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                  Categorías
+              </button>
+              <!-- Menú desplegable de categorias-->
+              <div id="categories-dropdown"
+                      class="hidden dropdown-menu bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 relative">
+                      <ul class="py-2">
+                          <li class="relative">
+                              <a routerLink=""
+                                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 15 15"
+                                      class="text-gray-400 mr-2">
+                                      <path fill="none" stroke="currentColor"
+                                          d="M9.5 14.5h4a1 1 0 0 0 1-1v-12a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm0 0H4m2.5-3v3m2-9h6m-4.5 6h3m-11.5-8h7v8h-7a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1Z" />
+                                  </svg>
+                                  Computadoras
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink=""
+                                  class="flex flex-row items-center  px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
+                                      class="text-gray-400 mr-2">
+                                      <path fill="currentColor"
+                                          d="M1 21v-2h22v2zm3-3q-.825 0-1.412-.587T2 16V5q0-.825.588-1.412T4 3h16q.825 0 1.413.588T22 5v11q0 .825-.587 1.413T20 18zm0-2h16V5H4zm0 0V5z" />
+                                  </svg>
+                                  Laptops
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink=""
+                                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
+                                      class="text-gray-400 mr-2">
+                                      <path fill="currentColor"
+                                          d="M16.5 20q1.45 0 2.475-1.025T20 16.5V15h-7v1.5q0 1.45 1.025 2.475T16.5 20m-3.475-7H15.5v-2.85q-.95.275-1.638 1.05t-.837 1.8m4.475 0h2.475q-.15-1.025-.837-1.8T17.5 10.15zm-1 9q-2.3 0-3.9-1.6T11 16.5v-3q0-2.3 1.6-3.9T16.5 8t3.9 1.6t1.6 3.9v3q0 2.3-1.6 3.9T16.5 22M4 18V6zm0 2q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6H4v12h5.025v2z" />
+                                  </svg>
+                                  Periféricos
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink=""
+                                  class=" flex flex-row items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 20 20"
+                                      class="text-gray-400 mr-2">
+                                      <path fill="currentColor"
+                                          d="M1.364 2.35v10.794h17.272V2.35zM19.09 1c.502 0 .909.403.909.9v11.694c0 .497-.407.9-.91.9l-8.53-.001v3.157h3.437c.377 0 .682.303.682.675a.678.678 0 0 1-.682.675H5.981a.678.678 0 0 1-.682-.675c0-.372.306-.674.682-.674l3.216-.001v-3.157H.909A.904.904 0 0 1 0 13.595V1.9c0-.497.407-.9.91-.9z" />
+                                  </svg>
+                                  Monitores
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink=""
+                                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
+                                      class="text-gray-400 mr-2">
+                                      <path fill="currentColor"
+                                          d="M13.662 13.534a1.3 1.3 0 0 0 .421.279a1.4 1.4 0 0 0 .54.1a1.43 1.43 0 0 0 1.121-.495l-.478-.365a.87.87 0 0 1-.638.281a.75.75 0 0 1-.458-.129a.64.64 0 0 1-.24-.349l-.008-.024H15.9V12.6a1.3 1.3 0 0 0-.1-.51a1.3 1.3 0 0 0-.268-.416a1.2 1.2 0 0 0-.41-.279a1.4 1.4 0 0 0-.527-.1a1.3 1.3 0 0 0-.927.384a1.4 1.4 0 0 0-.281.416a1.3 1.3 0 0 0-.1.512a1.3 1.3 0 0 0 .1.511a1.3 1.3 0 0 0 .275.416m.937-1.67a.613.613 0 0 1 .669.506H13.93a.613.613 0 0 1 .67-.506zm-2.399 1.79a.7.7 0 0 0 .324.182a2 2 0 0 0 .506.055h.081v-.615a2 2 0 0 1-.24-.015a.27.27 0 0 1-.155-.069a.26.26 0 0 1-.069-.151a1.5 1.5 0 0 1-.014-.244v-.882h.48v-.567h-.48v-.983h-.664V12.8a2.2 2.2 0 0 0 .054.519a.7.7 0 0 0 .177.335m4.051-3.483h.663v3.696h-.663zm-6.498 2.443v-.046a.77.77 0 0 1 .176-.523a.57.57 0 0 1 .421-.179a.54.54 0 0 1 .434.173a.74.74 0 0 1 .145.483v1.339h.67v-1.43a1.17 1.17 0 0 0-.275-.837a1.11 1.11 0 0 0-1.209-.2a.9.9 0 0 0-.33.269l-.037.047v-.363h-.655v2.521h.66zm-1.709-1.268h.665v2.521h-.665zm-.019-1.125h.7v.7h-.7zM6.724 5.262a1.7 1.7 0 0 0-.391 1.1v11.277a1.7 1.7 0 0 0 .391 1.1a1.24 1.24 0 0 0 .943.456H17a1.24 1.24 0 0 0 .942-.456a1.7 1.7 0 0 0 .391-1.1V6.361a1.7 1.7 0 0 0-.391-1.1A1.25 1.25 0 0 0 17 4.805H7.667a1.25 1.25 0 0 0-.943.457m9.726.471a.876.876 0 0 1 .876.876V17.39a.876.876 0 0 1-.876.876H8.217a.876.876 0 0 1-.876-.876V6.609a.876.876 0 0 1 .876-.876ZM4.333 11.611h1.333v.778H4.333Zm1.334-5.25a2.54 2.54 0 0 1 .586-1.649a1.87 1.87 0 0 1 1.414-.684h2.166V2.666H4.667a.367.367 0 0 0-.334.389v6.028h1.334ZM12 2.667h.667v1.361H12Zm-1.5 0h.833v1.361H10.5Zm-6.167 10.5h1.333v.972H4.333Zm0-3.306h1.333v.972H4.333ZM20 2.667h-5.167v1.361H17a1.87 1.87 0 0 1 1.414.684A2.55 2.55 0 0 1 19 6.361v2.722h1.333V3.056A.364.364 0 0 0 20 2.667m-1 8.944h1.333v.778H19Zm0-1.75h1.333v.972H19ZM6.253 19.288a2.54 2.54 0 0 1-.586-1.649v-2.722H4.333v6.027a.366.366 0 0 0 .334.389h5.166v-1.361H7.667a1.87 1.87 0 0 1-1.414-.684M19 13.167h1.333v.972H19Zm-5.667-10.5h.833v1.361h-.833ZM10.5 19.972h.833v1.361H10.5Zm2.833 0h.833v1.361h-.833ZM19 17.639a2.55 2.55 0 0 1-.586 1.649a1.87 1.87 0 0 1-1.414.684h-2.167v1.361H20a.364.364 0 0 0 .333-.389v-6.027H19Zm-7 2.333h.667v1.361H12Z" />
+                                  </svg>
+                                  Componentes
+                              </a>
+                          </li>
+                          <li>
+                              <a routerLink=""
+                                  class="flex flex-row items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24"
+                                      class="text-gray-400 mr-2">
+                                      <path fill="currentColor"
+                                          d="m22.9 21.2l-4.1-4.1c.4-1 .2-2.3-.7-3.1c-.9-.9-2.2-1.1-3.3-.6l1.9 1.9l-1.4 1.4l-2-2c-.5 1.1-.3 2.4.6 3.4c.9.9 2.1 1.1 3.1.7l4.1 4.1c.2.2.5.2.6 0l1-1c.3-.3.3-.6.2-.7M13 20H2v-2c0-2.2 3.6-4 8-4c.5 0 1 0 1.4.1c-.3.6-.4 1.2-.4 1.9c0 1.6.8 3.1 2 4M10 4C7.8 4 6 5.8 6 8s1.8 4 4 4s4-1.8 4-4s-1.8-4-4-4" />
+                                  </svg>
+                                  Servicio Técnico
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              <!-- Fin del menu desplegable de categorias -->
+          </div>
+      </div>
+      <div class="flex md:order-1">
+        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+          </svg>
+          <span class="sr-only">Search</span>
+        </button>
+        <div class="relative hidden md:block">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+            <span class="sr-only">Search icon</span>
+          </div>
+          <input type="text" id="search-navbar" class="block w-80 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Busca todo en linea y en la tienda">
+        </div>
+        <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+      </div>
+  
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+        <div class="relative mt-3 md:hidden">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+          </div>
+          <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+        </div>
+        <button routerLink=""
+        type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+            </svg>
+            Carrito
+        </button>
+        <a routerLink="login" 
+        class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+          <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+        </a>
+      </div>
+    </div>    
+  </nav>
