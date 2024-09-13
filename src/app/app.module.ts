@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FooterCatalogoComponent } from './catalogo/footer-catalogo/footer-catalogo.component';
@@ -12,6 +11,11 @@ import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './catalogo/home/home.component';
 import { ProductsDetailsComponent } from './catalogo/products-details/products-details.component';
 import { ComputadoraComponent } from './catalogo/categories/computadora/computadora.component';
+import { AdminitracionProductosComponent } from './administracion/inventarioProductos/adminitracion-productos/adminitracion-productos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CreateProductosComponent } from './administracion/inventarioProductos/create-productos/create-productos.component';
+import { EditProductosComponent } from './administracion/inventarioProductos/edit-productos/edit-productos.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -24,11 +28,15 @@ import { ComputadoraComponent } from './catalogo/categories/computadora/computad
     LoginUserComponent,
     HomeComponent,
     ProductsDetailsComponent,
-    ComputadoraComponent
+    ComputadoraComponent,
+    AdminitracionProductosComponent,
+    CreateProductosComponent,
+    EditProductosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

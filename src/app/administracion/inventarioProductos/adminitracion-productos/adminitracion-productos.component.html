@@ -1,0 +1,68 @@
+<body class="bg-gray-900 text-white">
+  <div class="container mx-auto px-4 py-6">
+    <h1 class="text-3xl font-bold text-center text-yellow-400 mb-8">
+      Gestión de Productos
+    </h1>
+
+    <!-- Botón para agregar nuevo producto -->
+    <div class="flex justify-end mb-4">
+      <a
+        routerLink="crear"
+        class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+      >
+        Agregar Producto
+      </a>
+    </div>
+
+    <!-- Tabla de productos -->
+    <table class="min-w-full table-auto bg-gray-800 rounded-lg overflow-hidden">
+      <thead>
+        <tr class="bg-gray-700 text-gray-200">
+          <th class="py-2 px-4 text-left">ID</th>
+          <th class="py-2 px-4 text-left">Categoría ID</th>
+          <th class="py-2 px-4 text-left">Imagen</th>
+          <th class="py-2 px-4 text-left">Descripción</th>
+          <th class="py-2 px-4 text-left">Modelo</th>
+          <th class="py-2 px-4 text-left">Marca</th>
+          <th class="py-2 px-4 text-left">Precio</th>
+          <th class="py-2 px-4 text-left">Stock</th>
+          <th class="py-2 px-4 text-left">Garantía</th>
+          <th class="py-2 px-4 text-left">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterar sobre la lista de productos -->
+        <tr *ngFor="let producto of productos" class="border-b border-gray-700">
+          <td class="py-2 px-4">{{ producto.id }}</td>
+          <td class="py-2 px-4">{{ producto.categoria_id }}</td>
+          <td class="py-2 px-4">
+            <img
+              [src]="producto.imagen"
+              alt="Imagen del producto"
+              class="w-12 h-12 object-cover rounded"
+            />
+          </td>
+          <td class="py-2 px-4">{{ producto.descripcion }}</td>
+          <td class="py-2 px-4">{{ producto.modelo }}</td>
+          <td class="py-2 px-4">{{ producto.marca }}</td>
+          <td class="py-2 px-4">{{ producto.precio | currency:'S/ ' : 'symbol' : '1.2-3' }}</td>
+          <td class="py-2 px-4">{{ producto.stock }}</td>
+          <td class="py-2 px-4">{{ producto.garantia }}</td>
+          <td class="py-2 px-4 space-x-2">
+            <a
+              [routerLink]="['/editar/:computadorasId', producto.id]"
+              class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded"
+              >Editar</a
+            >
+            <button
+              (click)="eliminarProducto(producto.id)"
+              class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

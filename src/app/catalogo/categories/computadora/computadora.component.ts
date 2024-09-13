@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { productsList } from '../../main-catalogo/products.mock';
+import { ProductoService } from '../../../services/producto.service';
+import { Producto } from '../../../models/producto.model';
 
 @Component({
   selector: 'app-computadora',
@@ -7,5 +9,33 @@ import { productsList } from '../../main-catalogo/products.mock';
   styleUrls: ['./computadora.component.css']
 })
 export class ComputadoraComponent {
-  productList = productsList;
+  productos: Producto[] = [];
+
+  constructor(private productoService: ProductoService) { }
+
+  ngOnInit(): void {
+    this.obtenerProductos();
+  }
+
+  obtenerProductos(): void {
+    this.productoService.ListarProductos().subscribe(
+      (data) => {
+        this.productos = data.map(producto => ({
+          ...producto,
+          categoria_id: producto.categoria_id,
+          imagen: producto.imagen,
+          descripcion: producto.descripcion,
+          modelo: producto.modelo,
+          marca: producto.marca,
+          precio: producto.precio,
+          stock: producto.stock,
+          garantia: producto.garantia
+        }));
+        console.log(this.productos);
+      },
+      (error) => {
+        console.error('Error al obtener los productos', error);
+      }
+    );
+  }
 }

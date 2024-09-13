@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear/Editar Producto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <div class="container mx-auto px-4 py-6">
+    <h1 class="text-3xl font-bold text-center text-yellow-400 mb-8">Crear/Editar Producto</h1>
+    
+    <form action="#" method="POST" class="bg-gray-800 p-6 rounded-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label for="categoria_id" class="block text-sm font-bold mb-2">Categoría ID</label>
+          <input type="number" id="categoria_id" name="categoria_id" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="imagen" class="block text-sm font-bold mb-2">Imagen (URL)</label>
+          <input type="text" id="imagen" name="imagen" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none">
+        </div>
+
+        <div>
+          <label for="descripcion" class="block text-sm font-bold mb-2">Descripción</label>
+          <input type="text" id="descripcion" name="descripcion" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="modelo" class="block text-sm font-bold mb-2">Modelo</label>
+          <input type="text" id="modelo" name="modelo" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="marca" class="block text-sm font-bold mb-2">Marca</label>
+          <input type="text" id="marca" name="marca" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="precio" class="block text-sm font-bold mb-2">Precio</label>
+          <input type="number" step="0.01" id="precio" name="precio" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="stock" class="block text-sm font-bold mb-2">Stock</label>
+          <input type="number" id="stock" name="stock" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="garantia" class="block text-sm font-bold mb-2">Garantía (meses)</label>
+          <input type="number" id="garantia" name="garantia" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none">
+        </div>
+      </div>
+
+      <div class="flex justify-end space-x-4">
+        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+          Guardar
+        </button>
+        <a href="index.html" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+          Cancelar
+        </a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

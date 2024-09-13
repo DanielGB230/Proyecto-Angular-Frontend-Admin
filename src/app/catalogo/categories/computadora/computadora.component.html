@@ -1,15 +1,15 @@
 <h4 class="flex justify-center my-3 mt-4 text-gray-200 text-2xl font-bold cursor-default">Computadoras</h4>
 <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
-    <div *ngFor="let product of productList"  
+    <div *ngFor="let product of productos"  
       class="mx-3 my-3 max-w-60 p-4 border border-gray-200 rounded shadow md:p-6 dark:border-gray-700">
         <a [routerLink]="['/computadoras',product.id]" class="flex items-center justify-center h-40 mb-4 rounded-md dark:bg-gray-700">
-            <img class="max-h-32" src={{product.imgUrl}} alt="computadora">
+            <img class="max-h-32" src={{product.imagen}} alt="computadora">
         </a>
         <div class="w-44 mb-2 text-center h-20">
-            <span class="text-gray-200 text-sm cursor-default">{{product.category}} {{product.brand}} {{product.description}}</span>
+            <span class="text-gray-200 text-sm cursor-default">{{product.modelo}} {{product.marca}} {{product.descripcion}}</span>
         </div>
         <div class="h-10 text-center mb-2">
-            <span class="text-gray-200 text-2xl font-bold cursor-default">{{product.price | currency:'S/ ' : 'symbol' : '1.2-3' }}</span>
+            <span class="text-gray-200 text-2xl font-bold cursor-default">{{product.precio | currency:'S/ ' : 'symbol' : '1.2-3' }}</span>
         </div>
         <div class="flex items-center justify-center ">
             <div>
