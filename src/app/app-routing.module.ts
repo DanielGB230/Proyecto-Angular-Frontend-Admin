@@ -9,16 +9,20 @@ import { ComputadoraComponent } from './catalogo/categories/computadora/computad
 import { AdminitracionProductosComponent } from './administracion/inventarioProductos/adminitracion-productos/adminitracion-productos.component';
 import { CreateProductosComponent } from './administracion/inventarioProductos/create-productos/create-productos.component';
 import { EditProductosComponent } from './administracion/inventarioProductos/edit-productos/edit-productos.component';
+import { CarShoppingComponent } from './catalogo/car-shopping/car-shopping.component';
+import { PanelPrincipalComponent } from './administracion/panel-principal/panel-principal.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginUserComponent},
   {path: 'sign-up', component: SignUpUserComponent},
   {path: 'computadoras', component: ComputadoraComponent},
-  {path: 'computadoras/:computadoraId', component: ProductsDetailsComponent},
+  {path: 'computadoras/:id', component: ProductsDetailsComponent},
+  {path: 'administracion', component: PanelPrincipalComponent},
   {path: 'administracion/productos', component: AdminitracionProductosComponent},
   {path: 'administracion/productos/crear', component: CreateProductosComponent},
   {path: 'administracion/productos/editar/:computadorasId', component: EditProductosComponent},
+  {path: 'carrito', component: CarShoppingComponent},
   {path: '**', redirectTo: '',pathMatch:'full'},
 ]
 

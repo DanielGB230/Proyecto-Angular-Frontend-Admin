@@ -6,7 +6,10 @@ module.exports = {
     "./src/app/catalogo/footer-catalogo/footer-catalogo.component.html",
     "./src/app/catalogo/nav-catalogo/nav-catalogo.component.html",
     "./src/app/catalogo/main-catalogo/main-catalogo.component.html",
-    "./src/app/catalogo/categories/computadora/computadora.component.html"
+    "./src/app/catalogo/categories/computadora/computadora.component.html",
+    "./src/app/catalogo/car-shopping/car-shopping.component.html",
+    "./src/app/administracion/panel-principal/panel-principal.component.html",
+    "./src/app/administracion/inventarioProductos/create-productos/create-productos.component.html"
   ],
   
   theme: {

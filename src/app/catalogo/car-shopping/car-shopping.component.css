@@ -1,0 +1,38 @@
+@media (max-width: 768px) {
+    .product-image {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .total-section {
+        width: 100%;
+    }
+
+    .btn-apply-coupon {
+        width: 100%;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .back-to-shop {
+        font-size: 14px;
+    }
+
+    .back-to-shop::after {
+        content: "Tienda";
+        font-size: 14px;
+        margin-left: -75px;
+        position: relative;
+    }
+
+    .product-info {
+        text-align: center;
+    }
+
+    .trash-icon {
+        margin-top: 10px;
+    }
+}

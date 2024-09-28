@@ -18,8 +18,8 @@ export class ProductoService {
   }
 
   // Obtener un producto por ID
-  ObtenerProducto(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+  ObtenerProducto(id: number): Observable<Producto> {
+    return this.http.get<Producto>(`${this.apiUrl}/${id}`);
   }
 
   // Crear un nuevo producto
@@ -35,5 +35,13 @@ export class ProductoService {
   // Eliminar un producto
   EliminarProducto(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
+  getProductosPorCategoria(categoriaId: number): Observable<Producto[]> {
+    return this.http.get<Producto[]>(`${this.apiUrl}/categoria/${categoriaId}`);
+  }
+
+  BuscarProductos(query: string): Observable<Producto[]> {
+    return this.http.get<Producto[]>(`api/productos/buscar?q=${query}`);
   }
 }

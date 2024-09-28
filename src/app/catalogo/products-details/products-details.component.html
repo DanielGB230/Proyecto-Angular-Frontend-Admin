@@ -1,26 +1,80 @@
-<ng-container *ngIf="loading">
-    <i style="color: red; margin: 250px;">Cargando Información...</i>
-</ng-container>
+<div class="container mx-auto px-4 py-8 md:py-12">
+  <div class="flex flex-col md:flex-row items-start justify-between">
+    <div class="w-full md:w-1/2">
+      <img id="main-image" src={{producto?.imagen}} alt="Monitor para juegos Odyssey G5 de 27" class="rounded-lg w-full">
+      <div class="mt-4 flex space-x-2 overflow-x-auto">
+      <img src={{producto?.imagen}} alt="Vista 1" class="thumbnail w-20 h-14 md:w-24 md:h-16 cursor-pointer border rounded" onclick="changeImage(this)">
+      <img src={{producto?.imagen}} alt="Vista 2" class="thumbnail w-20 h-14 md:w-24 md:h-16 cursor-pointer border rounded" onclick="changeImage(this)">
+      <img src={{producto?.imagen}} alt="Vista 3" class="thumbnail w-20 h-14 md:w-24 md:h-16 cursor-pointer border rounded" onclick="changeImage(this)">
+      </div>
+  </div>
 
-<ng-container *ngIf="!loading">
-    <section class="bg-white px-4 py-8 antialiased dark:bg-gray-900 md:py-16">
-        <div class="mx-auto grid max-w-screen-xl rounded-lg bg-gray-50 p-4 dark:bg-gray-800 md:p-8 lg:grid-cols-12 lg:gap-8 lg:p-16 xl:gap-16">
-          <div class="lg:col-span-5 lg:mt-0">
-            <a href="#">
-              <img class="mb-4 h-56 w-40 dark:hidden sm:h-96 sm:w-96 md:h-full md:w-full" src={{productos[0].imagen}} alt="computadora-1" />
-              <img class="mb-4 hidden dark:block md:h-full" src={{productos[0].imagen}} alt="computadora-1" />
-            </a>
-          </div>
-          <div class="me-auto place-self-center lg:col-span-7">
-            <h2 class="mb-3 text-2xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl">
-              {{productos[0].marca}} {{productos[0].modelo}}  {{productos[0].descripcion}}
-            </h2>
-            <p class="mb-6 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere beatae dolores, assumenda doloremque quia a aut! Aliquid, dolorem vitae eum iusto ex repellat exercitationem et neque in numquam perspiciatis aspernatur?</p>
-            <span class="block text-2xl font-bold text-gray-900 dark:text-white mb-1"> {{productos[0].precio | currency:'S/ ' : 'symbol' : '1.2-3'}}</span>
-            <br/>
-            <button type="button" class="inline-flex items-center justify-center rounded-lg text-white bg-primary-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-3 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Ir a comprar</button>
-          </div>
-        </div>
-      </section>
-</ng-container>
+  <div class="w-full md:w-1/2 md:pl-8 mt-6 md:mt-0">
+      <h1 class="text-2xl md:text-3xl font-serif text-gray-900 mb-4">{{producto?.modelo}} {{producto?.marca}}{{producto?.descripcion}}</h1>                
+      <div class="flex items-center mb-4">
+      </div>
+      <ul class="list-disc list-inside text-gray-700 mb-4">
+      <li>QHD y HDR10 se unen para crear una imagen cristalina</li>
+      <li>El tiempo de respuesta de 1 ms (MPRT) de 165 Hz hace que los comandos sean tan rápidos como tus reflejos</li>
+      <li>AMD FreeSync hace que la acción hiperrápida se vea perfecta</li>
+      </ul>
+      <div class="bg-gray-100 p-4 rounded-lg">
+      <p class="text-gray-600 mb-2">Precio</p>
+      <p class="text-4xl font-bold text-gray-900 mb-2">{{producto?.precio | currency:'S/ ' : 'symbol' : '1.2-3' }}</p>
+      <div class="mt-4 flex space-x-2">
+          <button class="flex-1 bg-gray-800 text-white py-2 rounded-lg">Comprar</button>
+          <button class="flex-1 bg-red-600 text-white py-2 rounded-lg">Añadir a la cesta</button>
+      </div>
+      </div>
+  </div>
+</div>
+<div class="container mx-auto px-4 py-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+      <div class="flex flex-col items-center border-r border-gray-300 pr-2 md:pr-4 last:border-r-0 md:last:border-r-0">
+          <img src="resources/imagenQHD.png" alt="Nombre 1" class="w-12 h-12 mb-1 md:w-16 md:h-16 md:mb-2">
+          <p class="text-center text-gray-700 text-xs md:text-sm">QHD</p>
+      </div>
+      <div class="flex flex-col items-center border-r border-gray-300 pr-2 md:pr-4 last:border-r-0 md:last:border-r-0">
+          <img src="resources/imagen1000R.png" alt="Nombre 2" class="w-12 h-12 mb-1 md:w-16 md:h-16 md:mb-2">
+          <p class="text-center text-gray-700 text-xs md:text-sm">Pantalla curva 1000R</p>
+      </div>
+      <div class="flex flex-col items-center border-r border-gray-300 pr-2 md:pr-4 last:border-r-0 md:last:border-r-0">
+          <img src="resources/imagen165Hz.png" alt="Nombre 3" class="w-12 h-12 mb-1 md:w-16 md:h-16 md:mb-2">
+          <p class="text-center text-gray-700 text-xs md:text-sm">165 Hz</p>
+      </div>
+      <div class="flex flex-col items-center">
+          <img src="resources/imagenAMDFreeSync.png" alt="Nombre 4" class="w-12 h-12 mb-1 md:w-16 md:h-16 md:mb-2">
+          <p class="text-center text-gray-700 text-xs md:text-sm">AMD FreeSync</p>
+      </div>
+  </div>
+</div>
 
+<div class="max-w-6xl mx-auto p-6 mt-8 bg-white">
+  <h2 class="text-2xl font-bold text-center mb-8">Especificaciones</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center">
+      <div class="p-6 rounded-lg space-y-2">
+          <p class="text-sm text-gray-500">Curvatura de la pantalla</p>
+          <p class="text-xl font-bold text-gray-900">1000R</p>
+      </div>
+      <div class="p-6 rounded-lg space-y-2">
+          <p class="text-sm text-gray-500">Relación de aspecto</p>
+          <p class="text-xl font-bold text-gray-900">16:9</p>
+      </div>
+      <div class="p-6 rounded-lg space-y-2">
+          <p class="text-sm text-gray-500">Relación de contraste estático</p>
+          <p class="text-xl font-bold text-gray-900">2500:1 (típico)</p>
+      </div>
+      <div class="p-6 rounded-lg space-y-2">
+          <p class="text-sm text-gray-500">Resolución</p>
+          <p class="text-xl font-bold text-gray-900">QHD (2560 x 1440)</p>
+      </div>
+      <div class="p-6 rounded-lg space-y-2">
+          <p class="text-sm text-gray-500">Brillo (típico)</p>
+          <p class="text-xl font-bold text-gray-900">300 cd/m²</p>
+      </div>
+      <div class="p-6 rounded-lg space-y-2">
+          <p class="text-sm text-gray-500">Tiempo de respuesta</p>
+          <p class="text-xl font-bold text-gray-900">1ms (MPRT)</p>
+      </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 export interface Producto {
     id: number;
     categoria_id: number;
-    imagen?: string;
+    imagen: string;
     descripcion: string;
     modelo: string;
     marca: string;

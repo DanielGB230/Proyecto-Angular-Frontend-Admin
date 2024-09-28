@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, Injectable } from '@angular/core';
-import { productsList } from './products.mock';
 import { ProductoService } from '../../services/producto.service';
 import { Producto } from '../../models/producto.model';
 
@@ -14,6 +13,8 @@ import { Producto } from '../../models/producto.model';
 
 export class MainCatalogoComponent implements AfterViewInit{
   productos: Producto[] = [];
+  suggestions: Producto[] = [];
+  categoriaSeleccionada: number = 1;
 
   constructor(private productoService: ProductoService) { }
 
@@ -35,12 +36,35 @@ export class MainCatalogoComponent implements AfterViewInit{
           stock: producto.stock,
           garantia: producto.garantia
         }));
-        console.log(this.productos);
       },
       (error) => {
         console.error('Error al obtener los productos', error);
       }
     );
+  }
+  
+  
+  // Método de búsqueda
+  onSearch(event: any): void {
+    const query = event.target.value;
+    if (query) {
+      this.productoService.BuscarProductos(query).subscribe(
+        (data) => {
+          this.suggestions = data;
+        },
+        (error) => {
+          console.error('Error al buscar productos', error);
+        }
+      );
+    } else {
+      this.suggestions = [];
+    }
+  }
+
+  // Método para seleccionar el producto de las sugerencias
+  selectProduct(product: Producto): void {
+    // Aquí puedes redirigir o hacer alguna acción cuando se seleccione un producto
+    console.log('Producto seleccionado:', product);
   }
 
   ngAfterViewInit(): void {

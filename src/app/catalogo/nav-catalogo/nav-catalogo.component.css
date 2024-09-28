@@ -43,3 +43,23 @@
     pointer-events: none;
     /* Evita la interacción con los botones cuando están ocultos */
 }
+
+.suggestions-container {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .suggestions-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .suggestions-container li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .suggestions-container li:hover {
+    background-color: #f0f0f0;
+  }

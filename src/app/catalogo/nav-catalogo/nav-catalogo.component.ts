@@ -1,11 +1,45 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { Producto } from 'src/app/models/producto.model';
+import { ProductoService } from '../../services/producto.service';
+
 
 @Component({
   selector: 'app-nav-catalogo',
   templateUrl: './nav-catalogo.component.html',
   styleUrls: ['./nav-catalogo.component.css'],
+  template: '<input (keyup)="filter(target($event).value)">'
 })
 export class NavCatalogoComponent implements AfterViewInit {
+  
+  productos: Producto[] = []; // Todos los productos
+  suggestions: Producto[] = []; // Para las sugerencias
+  
+  constructor(private productoService: ProductoService) { }
+
+
+  // Método de búsqueda
+  onSearch(event: any): void {
+    const query = event.target.value;
+    if (query) {
+      this.productoService.BuscarProductos(query).subscribe(
+        (data) => {
+          this.suggestions = data;
+        },
+        (error) => {
+          console.error('Error al buscar productos', error);
+        }
+      );
+    } else {
+      this.suggestions = [];
+    }
+  }
+
+  // Método para seleccionar el producto de las sugerencias
+  selectProduct(product: Producto): void {
+    // Aquí puedes redirigir o hacer alguna acción cuando se seleccione un producto
+    console.log('Producto seleccionado:', product);
+  }
+
   ngAfterViewInit(): void {
     // Asegurarse de que los elementos existen antes de operar con ellos
     const chatModal = document.getElementById(

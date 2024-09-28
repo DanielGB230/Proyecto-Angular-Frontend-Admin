@@ -1,67 +1,266 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crear/Editar Producto</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-white">
-  <div class="container mx-auto px-4 py-6">
-    <h1 class="text-3xl font-bold text-center text-yellow-400 mb-8">Crear/Editar Producto</h1>
-    
-    <form action="#" method="POST" class="bg-gray-800 p-6 rounded-lg">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-        <div>
-          <label for="categoria_id" class="block text-sm font-bold mb-2">Categoría ID</label>
-          <input type="number" id="categoria_id" name="categoria_id" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
-        </div>
+<div id="overlay" class="overlay"></div>
+<!-- Esto es para el fondo negro de la pantalla cuando esta reducida la pantalla -->
 
-        <div>
-          <label for="imagen" class="block text-sm font-bold mb-2">Imagen (URL)</label>
-          <input type="text" id="imagen" name="imagen" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none">
-        </div>
+<!-- Barra lateral -->
+<nav
+  id="sidebar"
+  class="sidebar_container w-64 h-screen flex flex-col border-r border-gray-500 bg-white text-black shadow-custom"
+>
+  <button
+    id="close-btn"
+    class="block md:hidden absolute top-2 right-2 text-black material-symbols-outlined"
+  >
+    close
+  </button>
+  <ul class="px-4 py-2 text-base mt-4">
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg">home</span>
+      <a href="" class="ml-1">Inicio</a>
+    </li>
 
-        <div>
-          <label for="descripcion" class="block text-sm font-bold mb-2">Descripción</label>
-          <input type="text" id="descripcion" name="descripcion" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
-        </div>
+    <li class="title_sidebar py-2 font-bold"><span>Venta</span></li>
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg"
+        >universal_currency_alt</span
+      >
+      <a href="" class="ml-2">Vender un producto</a>
+    </li>
+    <li class="title_sidebar py-2 font-bold"><span>Administrador</span></li>
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg">group</span>
+      <a href="" class="ml-2">Clientes</a>
+    </li>
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg">groups</span>
+      <a href="" class="ml-2">Empleados</a>
+    </li>
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg">engineering</span>
+      <a href="" class="ml-2">Proveedores</a>
+    </li>
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg">inventory</span>
+      <a href="" class="ml-2">Productos</a>
+    </li>
+    <li class="title_sidebar py-2 font-bold"><span>Reportes</span></li>
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg">real_estate_agent</span>
+      <a href="" class="ml-2">Ventas</a>
+    </li>
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg">support_agent</span>
+      <a href="" class="ml-2">Servicio Técnico</a>
+    </li>
+  </ul>
 
-        <div>
-          <label for="modelo" class="block text-sm font-bold mb-2">Modelo</label>
-          <input type="text" id="modelo" name="modelo" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
-        </div>
+  <ul class="px-4 py-2 mt-auto">
+    <li class="flex items-center py-2 hover:bg-gray-300 rounded-lg">
+      <span class="material-symbols-outlined text-lg">logout</span>
+      <a href="#" class="ml-2">Cerrar sesión</a>
+    </li>
+  </ul>
+</nav>
+<!-- ************************************************************************************************** -->
 
-        <div>
-          <label for="marca" class="block text-sm font-bold mb-2">Marca</label>
-          <input type="text" id="marca" name="marca" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
-        </div>
-
-        <div>
-          <label for="precio" class="block text-sm font-bold mb-2">Precio</label>
-          <input type="number" step="0.01" id="precio" name="precio" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
-        </div>
-
-        <div>
-          <label for="stock" class="block text-sm font-bold mb-2">Stock</label>
-          <input type="number" id="stock" name="stock" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none" required>
-        </div>
-
-        <div>
-          <label for="garantia" class="block text-sm font-bold mb-2">Garantía (meses)</label>
-          <input type="number" id="garantia" name="garantia" class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none">
-        </div>
-      </div>
-
-      <div class="flex justify-end space-x-4">
-        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-          Guardar
+<!-- Contenido principal -->
+<div
+  class="bg-gray-300 w-full flex flex-col items-start justify-start main-content min-h-screen"
+>
+  <div class="w-full">
+    <div class="flex flex-col mb-4 w-full">
+      <header
+        class="bg-blue-800 text-white shadow-xl h-14 flex items-center px-4 py-2 w-full"
+      >
+        <button
+          id="menu-btn"
+          class="md:hidden text-white font-bold text-lg rounded-lg p-1 mr-6 flex items-center"
+        >
+          <span id="menu-icon" class="material-symbols-outlined text-3xl"
+            >menu</span
+          >
         </button>
-        <a href="index.html" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
-          Cancelar
-        </a>
-      </div>
-    </form>
+        <div class="flex-grow"></div>
+        <ul class="flex items-center font-bold mr-4">
+          <li class="flex items-center">
+            <button class="material-symbols-outlined">apps</button>
+          </li>
+        </ul>
+        <ul class="flex items-center font-bold mr-4">
+          <li class="flex items-center">
+            <button class="material-symbols-outlined">account_circle</button>
+          </li>
+        </ul>
+        <ul class="flex items-center font-bold mr-4">
+          <li class="flex items-center">
+            <button class="material-symbols-outlined">arrow_back</button>
+          </li>
+        </ul>
+      </header>
+    </div>
   </div>
-</body>
-</html>
+  <!-- Aquí puedes agregar más contenido que se apilará hacia abajo -->
+  <div class="w-full mt-2 p-4">
+    <div
+      class="relative flex flex-col w-full h-full text-slate-700 bg-white shadow-md rounded-xl bg-clip-border"
+    >
+      <div
+        class="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border"
+      >
+        <div class="container mx-auto p-6 bg-white shadow-md rounded-md">
+          <div class="mb-4">
+            <h1 class="text-2xl font-bold">Crear Producto</h1>
+          </div>
+
+          <div id="error-message" class="hidden text-red-500 mb-4"></div>
+
+          <form id="product-form">
+            <div
+              class="flex flex-col md:flex-row justify-between space-x-0 md:space-x-4"
+            >
+              <div class="flex-1 space-y-4">
+                <input
+                  type="text"
+                  placeholder="Nombre del Producto"
+                  required
+                  class="w-full border border-gray-300 p-2 rounded-md focus:ring focus:ring-blue-500"
+                />
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Precio"
+                    required
+                    class="w-full border border-gray-300 p-2 rounded-md focus:ring focus:ring-blue-500"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Código de Producto"
+                    required
+                    class="w-full border border-gray-300 p-2 rounded-md focus:ring focus:ring-blue-500"
+                  />
+                  <input
+                    type="text"
+                    placeholder="SKU del Producto"
+                    required
+                    class="w-full border border-gray-300 p-2 rounded-md focus:ring focus:ring-blue-500"
+                  />
+                </div>
+
+                <div class="border border-gray-300 rounded-md">
+                  <textarea
+                    placeholder="Descripción del Producto"
+                    required
+                    class="w-full p-2 h-32 focus:ring focus:ring-blue-500"
+                  ></textarea>
+                </div>
+
+                <div
+                  class="border border-dashed border-gray-400 p-20 rounded-md text-center relative"
+                >
+                  <p class="text-gray-500">Arrastra o selecciona imágenes</p>
+                  <input
+                    type="file"
+                    id="file-input"
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    multiple
+                  />
+                  <div
+                    id="image-preview"
+                    class="flex justify-center flex-wrap mt-4"
+                  ></div>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="blue"
+                    class="w-12 h-12 mx-auto"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="space-y-4 w-full md:w-1/4 mt-4 md:mt-0">
+                <div class="border border-gray-300 rounded-md p-4">
+                  <h2 class="font-bold mb-2">Publicar</h2>
+                  <div class="flex justify-between items-center">
+                    <span>Estado:</span>
+                    <span class="text-gray-500">Borrador</span>
+                  </div>
+                </div>
+
+                <div class="border border-gray-300 rounded-md p-4">
+                  <h2 class="font-bold mb-2">Características Destacadas</h2>
+                  <textarea
+                    placeholder="Ingresa características importantes"
+                    required
+                    class="w-full p-2 h-24 focus:ring focus:ring-blue-500"
+                  ></textarea>
+                </div>
+
+                <div class="border border-gray-300 rounded-md p-4">
+                  <h2 class="font-bold mb-2">Categoría</h2>
+                  <select
+                    required
+                    class="w-full border border-gray-300 p-2 rounded-md"
+                  >
+                    <option value="">Selecciona una categoría</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="desktops">Desktops</option>
+                    <option value="accesorios">Accesorios</option>
+                    <option value="componentes">Componentes</option>
+                  </select>
+                </div>
+
+                <div class="border border-gray-300 rounded-md p-4">
+                  <h2 class="font-bold mb-2">Colores Disponibles</h2>
+                  <div class="flex space-x-2">
+                    <span class="w-6 h-6 rounded-full bg-gray-800"></span>
+                    <span class="w-6 h-6 rounded-full bg-gray-800"></span>
+                    <span class="w-6 h-6 rounded-full bg-gray-500"></span>
+                    <span class="w-6 h-6 rounded-full bg-blue-500"></span>
+                  </div>
+                </div>
+
+                <div class="border border-gray-300 rounded-md p-4">
+                  <h2 class="font-bold mb-2">Stock</h2>
+                  <input
+                    type="number"
+                    placeholder="Cantidad en Stock"
+                    required
+                    class="w-full border border-gray-300 p-2 rounded-md mb-4"
+                  />
+                  <div class="flex items-center">
+                    <span class="mr-2">Disponible</span>
+                    <input type="checkbox" class="toggle-checkbox" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-end mt-6 space-x-4">
+              <button
+                type="button"
+                class="border border-red-500 text-red-500 px-4 py-2 rounded-md"
+              >
+                Descartar
+              </button>
+              <button
+                type="submit"
+                class="border border-blue-500 text-blue-600 px-4 py-2 rounded-md"
+              >
+                Crear
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

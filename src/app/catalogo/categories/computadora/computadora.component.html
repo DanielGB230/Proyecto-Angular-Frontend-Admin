@@ -1,33 +1,34 @@
-<h4 class="flex justify-center my-3 mt-4 text-gray-200 text-2xl font-bold cursor-default">Computadoras</h4>
+<app-nav-catalogo></app-nav-catalogo>
+
+<h4 class="flex justify-center my-3 mt-4 text-black text-2xl font-bold cursor-default">Computadoras</h4>
 <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
-    <div *ngFor="let product of productos"  
-      class="mx-3 my-3 max-w-60 p-4 border border-gray-200 rounded shadow md:p-6 dark:border-gray-700">
-        <a [routerLink]="['/computadoras',product.id]" class="flex items-center justify-center h-40 mb-4 rounded-md dark:bg-gray-700">
+    <button *ngFor="let product of productos"  
+      class="mx-3 my-3 max-w-60 p-4 border border-gray-200 rounded shadow md:p-6 "
+      style="background-color:  #F4F4F4"
+      [routerLink]="[product.id]">
+        <a [routerLink]="['/computadoras',product.id]" class="flex items-center justify-center h-40 mb-4 rounded-md">
             <img class="max-h-32" src={{product.imagen}} alt="computadora">
         </a>
         <div class="w-44 mb-2 text-center h-20">
-            <span class="text-gray-200 text-sm cursor-default">{{product.modelo}} {{product.marca}} {{product.descripcion}}</span>
+            <span class="text-black text-sm cursor-default">{{product.modelo}} {{product.marca}} {{product.descripcion}}</span>
         </div>
         <div class="h-10 text-center mb-2">
-            <span class="text-gray-200 text-2xl font-bold cursor-default">{{product.precio | currency:'S/ ' : 'symbol' : '1.2-3' }}</span>
+            <span class="text-black text-2xl font-bold cursor-default">{{product.precio | currency:'S/ ' : 'symbol' : '1.2-3' }}</span>
         </div>
         <div class="flex items-center justify-center ">
-            <div>
+            <div class="rounded-md mr-1 bg-black hover:bg-slate-700">
                 <a href="#"
-                    class="flex items-center justify-center font-semibold h-10 dark:text-gray-200 rounded-md dark:bg-gray-700 w-32 text-xs">Agregar
+                    class="flex items-center justify-center font-bold h-10 w-32 text-xs text-white"
+                    >Agregar
                     al carro</a>
             </div>
-            <div>
-                <div
-                    class="flex my-auto items-center justify-center h-10 w-10 rounded-md dark:bg-gray-700 ml-2 dark:text-gray-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M12 20.325q-.35 0-.712-.125t-.638-.4l-1.725-1.575q-2.65-2.425-4.788-4.812T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.325 0 2.5.562t2 1.538q.825-.975 2-1.537t2.5-.563q2.35 0 3.925 1.575T22 8.15q0 2.875-2.125 5.275T15.05 18.25l-1.7 1.55q-.275.275-.637.4t-.713.125" />
-                    </svg>
-                </div>
+            <div class="rounded-md bg-black hover:bg-slate-700">
+                <a href="#"
+                    class="flex items-center justify-center font-bold h-10 w-20 text-xs text-white "
+                    >Comprar</a>
             </div>
         </div>
-    </div>
+    </button>
 </div>
 <app-footer-catalogo></app-footer-catalogo>
 <router-outlet></router-outlet>

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FooterCatalogoComponent } from './catalogo/footer-catalogo/footer-catalogo.component';
 import { NavCatalogoComponent } from './catalogo/nav-catalogo/nav-catalogo.component';
@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateProductosComponent } from './administracion/inventarioProductos/create-productos/create-productos.component';
 import { EditProductosComponent } from './administracion/inventarioProductos/edit-productos/edit-productos.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { CarShoppingComponent } from './catalogo/car-shopping/car-shopping.component';
+import { PanelPrincipalComponent } from './administracion/panel-principal/panel-principal.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,14 @@ import { BrowserModule } from '@angular/platform-browser';
     AdminitracionProductosComponent,
     CreateProductosComponent,
     EditProductosComponent,
+    CarShoppingComponent,
+    PanelPrincipalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { productsList } from '../../main-catalogo/products.mock';
 import { ProductoService } from '../../../services/producto.service';
 import { Producto } from '../../../models/producto.model';
 

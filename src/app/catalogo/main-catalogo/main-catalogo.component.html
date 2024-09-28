@@ -1,3 +1,4 @@
+<!-- COMPUTADORAS -->
 <h4 class="flex justify-center my-3 mt-4 text-black text-2xl font-bold cursor-default">Computadoras</h4>
 <div
     class="flex px-5 py-3 w-36 mx-auto mt-2 0 border rounded-lg items-center justify-center"
@@ -14,7 +15,7 @@
 <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-2">
     <button *ngFor="let product of productos" 
       class="mx-3 my-3 max-w-60 p-4 rounded shadow md:p-6 #F4F4F4"
-      style="background-color: #F4F4F4"
+      style="background-color:  #F4F4F4"
       [routerLink]="['/computadoras',product.id]"
       >
         <div class="flex items-center justify-center h-40 mb-4 rounded-md ">
@@ -43,6 +44,7 @@
 </div>
 <div class="chat-button h-[60px] w-[60px] rounded-full bg-black fixed bottom-[30px] right-[30px] cursor-pointer">
 </div>
+
 
 <!-- Modal -->
 <div id="chatModal"
