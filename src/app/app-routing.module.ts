@@ -1,35 +1,43 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SignUpUserComponent } from './sign-up-user/sign-up-user.component';
-import { LoginUserComponent } from './login-user/login-user.component';
-import { HomeComponent } from './catalogo/home/home.component';
-import { ProductsDetailsComponent } from './catalogo/products-details/products-details.component';
-import { ComputadoraComponent } from './catalogo/categories/computadora/computadora.component';
-import { AdminitracionProductosComponent } from './administracion/inventarioProductos/adminitracion-productos/adminitracion-productos.component';
-import { CreateProductosComponent } from './administracion/inventarioProductos/create-productos/create-productos.component';
-import { EditProductosComponent } from './administracion/inventarioProductos/edit-productos/edit-productos.component';
-import { CarShoppingComponent } from './catalogo/car-shopping/car-shopping.component';
-import { PanelPrincipalComponent } from './administracion/panel-principal/panel-principal.component';
+import { ListaProductosComponent } from './administracion/gestion-productos/lista-productos/lista-productos.component';
+import { NuevoProductoComponent } from './administracion/gestion-productos/nuevo-producto/nuevo-producto.component';
+import { VenderProductosComponent } from './administracion/gestion-productos/vender-productos/vender-productos.component';
+import { NuevoRolComponent } from './administracion/gestion-usuarios/nuevo-rol/nuevo-rol.component';
+import { NuevoUsuarioComponent } from './administracion/gestion-usuarios/nuevo-usuario/nuevo-usuario.component';
+import { RolesComponent } from './administracion/gestion-usuarios/roles/roles.component';
+import { UsuariosComponent } from './administracion/gestion-usuarios/usuarios/usuarios.component';
+import { DashboardComponent } from './administracion/gestion-ventas/dashboard/dashboard.component';
+import { VentasComponent } from './administracion/gestion-ventas/ventas/ventas.component';
+import { NuevoProveedorComponent } from './administracion/relaciones-proveedores/nuevo-proveedor/nuevo-proveedor.component';
+import { NuevoServicioComponent } from './administracion/relaciones-proveedores/nuevo-servicio/nuevo-servicio.component';
+import { ProveedoresComponent } from './administracion/relaciones-proveedores/proveedores/proveedores.component';
+import { ServicioTecnicoComponent } from './administracion/relaciones-proveedores/servicio-tecnico/servicio-tecnico.component';
+import { InicioComponent } from './administracion/gestion-ventas/inicio/inicio.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'login', component: LoginUserComponent},
-  {path: 'sign-up', component: SignUpUserComponent},
-  {path: 'computadoras', component: ComputadoraComponent},
-  {path: 'computadoras/:id', component: ProductsDetailsComponent},
-  {path: 'administracion', component: PanelPrincipalComponent},
-  {path: 'administracion/productos', component: AdminitracionProductosComponent},
-  {path: 'administracion/productos/crear', component: CreateProductosComponent},
-  {path: 'administracion/productos/editar/:computadorasId', component: EditProductosComponent},
-  {path: 'carrito', component: CarShoppingComponent},
-  {path: '**', redirectTo: '',pathMatch:'full'},
+  { path: 'administracion/inicio', component: InicioComponent },
+  { path: 'administracion/gestion/producto/nuevo', component: NuevoProductoComponent },
+  { path: 'administracion/gestion/producto/lista', component: ListaProductosComponent },
+  { path: 'administracion/gestion/producto/vender', component: VenderProductosComponent },
+  { path: 'administracion/gestion/usuarios/roles', component: RolesComponent },
+  { path: 'administracion/gestion/usuarios/rol/nuevo', component: NuevoRolComponent },
+  { path: 'administracion/gestion/usuarios', component: UsuariosComponent },
+  { path: 'administracion/gestion/usuarios/nuevo', component: NuevoUsuarioComponent },
+  { path: 'administracion/gestion/ventas/dashboard', component: DashboardComponent },
+  { path: 'administracion/gestion/ventas', component: VentasComponent },
+  { path: 'administracion/gestion/proveedores', component: ProveedoresComponent },
+  { path: 'administracion/gestion/proveedores/nuevo', component: NuevoProveedorComponent },
+  { path: 'administracion/gestion/servicioTecnico', component: ServicioTecnicoComponent },
+  { path: 'administracion/gestion/servicioTecnico/nuevo', component: NuevoServicioComponent },
+
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule {
-  
+
 }

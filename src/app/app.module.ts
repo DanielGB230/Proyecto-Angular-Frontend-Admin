@@ -1,41 +1,39 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { FooterCatalogoComponent } from './catalogo/footer-catalogo/footer-catalogo.component';
-import { NavCatalogoComponent } from './catalogo/nav-catalogo/nav-catalogo.component';
-import { MainCatalogoComponent } from './catalogo/main-catalogo/main-catalogo.component';
-import { CarouselCatalogoComponent } from './catalogo/carousel-catalogo/carousel-catalogo.component';
-import { AppRoutingModule } from './app-routing.module';
-import { SignUpUserComponent } from './sign-up-user/sign-up-user.component';
-import { LoginUserComponent } from './login-user/login-user.component';
-import { HomeComponent } from './catalogo/home/home.component';
-import { ProductsDetailsComponent } from './catalogo/products-details/products-details.component';
-import { ComputadoraComponent } from './catalogo/categories/computadora/computadora.component';
-import { AdminitracionProductosComponent } from './administracion/inventarioProductos/adminitracion-productos/adminitracion-productos.component';
-import { HttpClientModule } from '@angular/common/http';
-import { CreateProductosComponent } from './administracion/inventarioProductos/create-productos/create-productos.component';
-import { EditProductosComponent } from './administracion/inventarioProductos/edit-productos/edit-productos.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { CarShoppingComponent } from './catalogo/car-shopping/car-shopping.component';
-import { PanelPrincipalComponent } from './administracion/panel-principal/panel-principal.component';
+import { ListaProductosComponent } from './administracion/gestion-productos/lista-productos/lista-productos.component';
+import { VenderProductosComponent } from './administracion/gestion-productos/vender-productos/vender-productos.component';
+import { NuevoRolComponent } from './administracion/gestion-usuarios/nuevo-rol/nuevo-rol.component';
+import { NuevoUsuarioComponent } from './administracion/gestion-usuarios/nuevo-usuario/nuevo-usuario.component';
+import { RolesComponent } from './administracion/gestion-usuarios/roles/roles.component';
+import { UsuariosComponent } from './administracion/gestion-usuarios/usuarios/usuarios.component';
+import { DashboardComponent } from './administracion/gestion-ventas/dashboard/dashboard.component';
+import { VentasComponent } from './administracion/gestion-ventas/ventas/ventas.component';
+import { ProveedoresComponent } from './administracion/relaciones-proveedores/proveedores/proveedores.component';
+import { ServicioTecnicoComponent } from './administracion/relaciones-proveedores/servicio-tecnico/servicio-tecnico.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { NuevoProveedorComponent } from './administracion/relaciones-proveedores/nuevo-proveedor/nuevo-proveedor.component';
+import { NuevoServicioComponent } from './administracion/relaciones-proveedores/nuevo-servicio/nuevo-servicio.component';
+import { InicioComponent } from './administracion/gestion-ventas/inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterCatalogoComponent,
-    NavCatalogoComponent,
-    MainCatalogoComponent,
-    CarouselCatalogoComponent,
-    SignUpUserComponent,
-    LoginUserComponent,
-    HomeComponent,
-    ProductsDetailsComponent,
-    ComputadoraComponent,
-    AdminitracionProductosComponent,
-    CreateProductosComponent,
-    EditProductosComponent,
-    CarShoppingComponent,
-    PanelPrincipalComponent,
+    DashboardComponent,
+    VentasComponent,
+    ListaProductosComponent,
+    VenderProductosComponent,
+    UsuariosComponent,
+    RolesComponent,
+    ServicioTecnicoComponent,
+    ProveedoresComponent,
+    NuevoUsuarioComponent,
+    NuevoRolComponent,
+    NuevoProveedorComponent,
+    NuevoServicioComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
