@@ -14,6 +14,8 @@ import { NuevoServicioComponent } from './administracion/relaciones-proveedores/
 import { ProveedoresComponent } from './administracion/relaciones-proveedores/proveedores/proveedores.component';
 import { ServicioTecnicoComponent } from './administracion/relaciones-proveedores/servicio-tecnico/servicio-tecnico.component';
 import { InicioComponent } from './administracion/gestion-ventas/inicio/inicio.component';
+import { EmpleadosComponent } from './administracion/gestion-usuarios/empleados/empleados.component';
+import { NuevoEmpleadoComponent } from './administracion/gestion-usuarios/nuevo-empleado/nuevo-empleado.component';
 
 const routes: Routes = [
   { path: 'administracion/inicio', component: InicioComponent },
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'administracion/gestion/proveedores/nuevo', component: NuevoProveedorComponent },
   { path: 'administracion/gestion/servicioTecnico', component: ServicioTecnicoComponent },
   { path: 'administracion/gestion/servicioTecnico/nuevo', component: NuevoServicioComponent },
+  { path: 'administracion/gestion/usuarios/empleados', component: EmpleadosComponent },
+  { path: 'administracion/gestion/usuarios/empleados/nuevo', component: NuevoEmpleadoComponent },
 
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ]

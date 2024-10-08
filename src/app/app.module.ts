@@ -17,6 +17,8 @@ import { AppComponent } from './app.component';
 import { NuevoProveedorComponent } from './administracion/relaciones-proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { NuevoServicioComponent } from './administracion/relaciones-proveedores/nuevo-servicio/nuevo-servicio.component';
 import { InicioComponent } from './administracion/gestion-ventas/inicio/inicio.component';
+import { EmpleadosComponent } from './administracion/gestion-usuarios/empleados/empleados.component';
+import { NuevoEmpleadoComponent } from './administracion/gestion-usuarios/nuevo-empleado/nuevo-empleado.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { InicioComponent } from './administracion/gestion-ventas/inicio/inicio.c
     NuevoProveedorComponent,
     NuevoServicioComponent,
     InicioComponent,
+    EmpleadosComponent,
+    NuevoEmpleadoComponent,
   ],
   imports: [
     BrowserModule,

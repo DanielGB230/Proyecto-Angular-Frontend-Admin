@@ -2,12 +2,11 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-roles',
-  templateUrl: './roles.component.html',
-  styleUrls: ['./roles.component.css']
+  selector: 'app-empleados',
+  templateUrl: './empleados.component.html',
+  styleUrls: ['./empleados.component.css']
 })
-
-export class RolesComponent implements OnInit {
+export class EmpleadosComponent implements OnInit {
   constructor(private router: Router) { }
 
   navigateTo(route: string) {
