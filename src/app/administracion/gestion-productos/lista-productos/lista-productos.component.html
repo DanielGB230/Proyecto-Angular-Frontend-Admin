@@ -69,9 +69,7 @@
                 </svg>
                 <span class="ml-3">Inicio</span>
             </button>
-
             <li class="title_sidebar py-2 font-bold"><span>Gestión de Ventas</span></li>
-
             <button (click)="navigateTo('administracion/gestion/ventas/dashboard')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -84,7 +82,6 @@
                 </svg>
                 <span class="ml-3">Dashboard</span>
             </button>
-
             <button (click)="navigateTo('administracion/gestion/ventas')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -94,7 +91,6 @@
                 </svg>
                 <span class="ml-3">Ventas</span>
             </button>
-
             <li class="title_sidebar py-2 font-bold"><span>Gestión de Productos</span></li>
             <button (click)="navigateTo('administracion/gestion/producto/lista')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
@@ -108,15 +104,6 @@
                 </svg>
                 <span class="ml-3">Lista de Productos</span>
             </button>
-            <button (click)="navigateTo('administracion/gestion/producto/nuevo')"
-                class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                    <path fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd" />
-                </svg>
-                <span class="ml-3">Nuevo Producto</span>
-            </button>
             <button (click)="navigateTo('administracion/gestion/producto/vender')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -127,6 +114,23 @@
                         clip-rule="evenodd" />
                 </svg>
                 <span class="ml-3">Vender Productos</span>
+            </button>
+            <button (click)="navigateTo('administracion/gestion/productos/categorias')"
+                class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path
+                        d="M19.906 9c.382 0 .749.057 1.094.162V9a3 3 0 0 0-3-3h-3.879a.75.75 0 0 1-.53-.22L11.47 3.66A2.25 2.25 0 0 0 9.879 3H6a3 3 0 0 0-3 3v3.162A3.756 3.756 0 0 1 4.094 9h15.812ZM4.094 10.5a2.25 2.25 0 0 0-2.227 2.568l.857 6A2.25 2.25 0 0 0 4.951 21H19.05a2.25 2.25 0 0 0 2.227-1.932l.857-6a2.25 2.25 0 0 0-2.227-2.568H4.094Z" />
+                </svg>
+                <span class="ml-3">Categorias</span>
+            </button>
+            <button (click)="navigateTo('administracion/gestion/productos/marcas')"
+                class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd"
+                        d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span class="ml-3">Marcas</span>
             </button>
             <li class="title_sidebar py-2 font-bold"><span>Gestión de Usuarios</span></li>
             <button (click)="navigateTo('administracion/gestion/usuarios/empleados')"
@@ -140,15 +144,6 @@
                 </svg>
                 <span class="ml-3">Empleados</span>
             </button>
-            <button (click)="navigateTo('administracion/gestion/usuarios/empleados/nuevo')"
-                class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                    <path fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd" />
-                </svg>
-                <span class="ml-3">Nuevo Empleado</span>
-            </button>
             <button (click)="navigateTo('administracion/gestion/usuarios')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -157,16 +152,6 @@
                 </svg>
                 <span class="ml-3">Usuarios</span>
             </button>
-            <button (click)="navigateTo('administracion/gestion/usuarios/nuevo')"
-                class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                    <path fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd" />
-                </svg>
-                <span class="ml-3">Nuevo Usuarios</span>
-            </button>
-
             <button (click)="navigateTo('administracion/gestion/usuarios/roles')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -176,15 +161,6 @@
                 </svg>
                 <span class="ml-3">Roles</span>
             </button>
-            <button (click)="navigateTo('administracion/gestion/usuarios/rol/nuevo')"
-                class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                    <path fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd" />
-                </svg>
-                <span class="ml-3">Nuevo Roles</span>
-            </button>
             <li class="title_sidebar py-2 font-bold"><span>Relaciones con Proveedores</span></li>
             <button (click)="navigateTo('administracion/gestion/proveedores')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
@@ -192,17 +168,7 @@
                     <path
                         d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
                 </svg>
-
                 <span class="ml-3">Proveedores</span>
-            </button>
-            <button (click)="navigateTo('administracion/gestion/proveedores/nuevo')"
-                class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                    <path fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd" />
-                </svg>
-                <span class="ml-3">Nuevo Proveedor</span>
             </button>
             <button (click)="navigateTo('administracion/gestion/servicioTecnico')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
@@ -216,20 +182,9 @@
                         d="m12.556 17.329 4.183 4.182a3.375 3.375 0 0 0 4.773-4.773l-3.306-3.305a6.803 6.803 0 0 1-1.53.043c-.394-.034-.682-.006-.867.042a.589.589 0 0 0-.167.063l-3.086 3.748Zm3.414-1.36a.75.75 0 0 1 1.06 0l1.875 1.876a.75.75 0 1 1-1.06 1.06L15.97 17.03a.75.75 0 0 1 0-1.06Z"
                         clip-rule="evenodd" />
                 </svg>
-
                 <span class="ml-3">Servicio Técnico</span>
             </button>
-            <button (click)="navigateTo('administracion/gestion/servicioTecnico/nuevo')"
-                class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                    <path fill-rule="evenodd"
-                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
-                        clip-rule="evenodd" />
-                </svg>
-                <span class="ml-3">Nuevo Servicio</span>
-            </button>
         </ul>
-
         <ul class="px-4 py-2 mt-auto text-white">
             <button (click)="navigateTo('administracion/inicio')"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-gray-900 transition-colors duration-200">
@@ -238,18 +193,16 @@
                         d="M7.5 3.75A1.5 1.5 0 0 0 6 5.25v13.5a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5V15a.75.75 0 0 1 1.5 0v3.75a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V5.25a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3V9A.75.75 0 0 1 15 9V5.25a1.5 1.5 0 0 0-1.5-1.5h-6Zm5.03 4.72a.75.75 0 0 1 0 1.06l-1.72 1.72h10.94a.75.75 0 0 1 0 1.5H10.81l1.72 1.72a.75.75 0 1 1-1.06 1.06l-3-3a.75.75 0 0 1 0-1.06l3-3a.75.75 0 0 1 1.06 0Z"
                         clip-rule="evenodd" />
                 </svg>
-
                 <span class="ml-3 ">Cerrar sesión</span>
             </button>
         </ul>
     </nav>
     <!-- ************************************************************************************************** -->
     <!-- Contenido principal -->
-    <div class="w-full mt-2 p-4 bg-gray-200 h-screen overflow-y-auto">
+    <div class="w-full mt-2 p-4 bg-gray-200 overflow-y-auto">
         <div id="scrollable-content"
             class="relative flex flex-col w-full h-full p-2 text-black bg-white shadow-md rounded-xl">
             <div class="relative flex flex-col w-full overflow-y-auto bg-white">
-                <!-- Aquí puedes agregar más contenido que se apilará hacia abajo -->
                 <div class="relative mx-4 mt-4  text-slate-700 bg-white rounded-none bg-clip-border">
                     <div class="flex items-center justify-between p-4">
                         <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
@@ -257,13 +210,14 @@
                                 id="uniqueSearchButton" type="button"
                                 class="bg-blue-400 rounded-md py-2 px-4 text-center text-sm font-semibold text-white flex items-center space-x-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>
-                                <span>Nuevo</span>
+
+                                <span>Nuevo producto</span>
                             </button>
                         </div>
-
                         <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
                             <button
                                 class="bg-red-300 rounded-md py-2 px-4 text-center text-sm font-semibold text-white flex items-center space-x-2">
@@ -272,7 +226,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
                                 </svg>
-                                <span>Exportar</span>
+                                <span>Exportar a PDF</span>
                             </button>
                         </div>
                     </div>
@@ -288,12 +242,10 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="p-0 overflow-scroll">
                     <table class="w-full mt-4 text-left table-auto min-w-max ">
                         <thead>
                             <tr>
-
                                 <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
                                     <div
                                         class="flex items-center justify-between gap-2 font-sans text-sm font-bold leading-none text-black">
@@ -303,7 +255,6 @@
                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                 d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                                         </svg>
-
                                     </div>
                                 </th>
                                 <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
@@ -340,10 +291,11 @@
                                         </svg>
                                     </div>
                                 </th>
+
                                 <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
                                     <div
                                         class="flex items-center gap-2 font-sans text-sm font-bold leading-none text-black">
-                                        <p>Precio</p>
+                                        <p>Categoria</p>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -355,7 +307,7 @@
                                 <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
                                     <div
                                         class="flex items-center gap-2 font-sans text-sm font-bold leading-none text-black">
-                                        <p>Categoria</p>
+                                        <p>Modelo</p>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -373,7 +325,50 @@
                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                 d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                                         </svg>
-
+                                    </div>
+                                </th>
+                                <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
+                                    <div
+                                        class="flex items-center gap-2 font-sans text-sm font-bold leading-none text-black">
+                                        <p>Stock</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+                                        </svg>
+                                    </div>
+                                </th>
+                                <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
+                                    <div
+                                        class="flex items-center gap-2 font-sans text-sm font-bold leading-none text-black">
+                                        <p>ULT Precio venta</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+                                        </svg>
+                                    </div>
+                                </th>
+                                <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
+                                    <div
+                                        class="flex items-center gap-2 font-sans text-sm font-bold leading-none text-black">
+                                        <p>ULT Precio utilidad</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+                                        </svg>
+                                    </div>
+                                </th>
+                                <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
+                                    <div
+                                        class="flex items-center gap-2 font-sans text-sm font-bold leading-none text-black">
+                                        <p>Garantia</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+                                        </svg>
                                     </div>
                                 </th>
                                 <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
@@ -385,19 +380,6 @@
                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                 d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                                         </svg>
-
-                                    </div>
-                                </th>
-                                <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50">
-                                    <div
-                                        class="flex items-center gap-2 font-sans text-sm font-bold leading-none text-black">
-                                        <p>Vender</p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
-                                        </svg>
-
                                     </div>
                                 </th>
 
@@ -410,15 +392,12 @@
                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                 d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                                         </svg>
-
                                     </div>
                                 </th>
                             </tr>
                         </thead>
-
                         <tbody>
                             <tr>
-
                                 <td class="p-4 border-b border-slate-200">
                                     <div class="flex items-center gap-3">
                                         <p class="text-sm font-semibold text-slate-700">
@@ -427,12 +406,9 @@
                                     </div>
                                 </td>
                                 <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamiento
-                                            (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720p
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-xs font-semibold text-slate-700 break-words max-w-xs">
+                                            Laptop HP de 14" com 288 gb de almacenamiento
                                         </p>
                                     </div>
                                 </td>
@@ -441,8 +417,8 @@
                                         alt="Product Image" />
                                 </td>
                                 <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-xs font-semibold text-slate-700 break-words max-w-xs">
                                             HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
                                             de RAM, 288 GB de almacenamiento
                                             (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
@@ -451,13 +427,6 @@
                                     </div>
                                 </td>
 
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            $250.00
-                                        </p>
-                                    </div>
-                                </td>
                                 <td class="p-4 border-b border-slate-200">
                                     <div class="flex items-center gap-3">
                                         <p class="text-sm font-semibold text-slate-700">
@@ -468,28 +437,51 @@
                                 <td class="p-4 border-b border-slate-200">
                                     <div class="flex items-center gap-3">
                                         <p class="text-sm font-semibold text-slate-700">
-                                            Hp
+                                            ProBook
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            HP
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            13
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            s/2.799
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            s/3.799
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            1 año
                                         </p>
                                     </div>
                                 </td>
                                 <td class="p-4 border-b border-slate-200">
                                     <div class="w-max">
                                         <div
-                                            class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-black uppercase rounded-md select-none whitespace-nowrap bg-red-300">
-                                            <span class="">Agotado</span>
+                                            class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-black uppercase rounded-md select-none whitespace-nowrap bg-green-300">
+                                            <span class="">En stock</span>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-max">
-                                        <button id="" class=" p-2 rounded-full" aria-label="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                            </svg>
-
-                                        </button>
                                     </div>
                                 </td>
                                 <td class="p-4 border-b border-slate-200">
@@ -515,7 +507,6 @@
                             </tr>
                             <!-- ***************************************** -->
                             <tr>
-
                                 <td class="p-4 border-b border-slate-200">
                                     <div class="flex items-center gap-3">
                                         <p class="text-sm font-semibold text-slate-700">
@@ -524,12 +515,9 @@
                                     </div>
                                 </td>
                                 <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamiento
-                                            (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720p
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-xs font-semibold text-slate-700 break-words max-w-xs">
+                                            Laptop HP de 14" com 288 gb de almacenamiento
                                         </p>
                                     </div>
                                 </td>
@@ -538,23 +526,16 @@
                                         alt="Product Image" />
                                 </td>
                                 <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Streaam - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamientoo
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-xs font-semibold text-slate-700 break-words max-w-xs">
+                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
+                                            de RAM, 288 GB de almacenamiento
                                             (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720pxa
+                                            cámara web 720p
                                         </p>
                                     </div>
                                 </td>
 
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            $250.00
-                                        </p>
-                                    </div>
-                                </td>
                                 <td class="p-4 border-b border-slate-200">
                                     <div class="flex items-center gap-3">
                                         <p class="text-sm font-semibold text-slate-700">
@@ -565,7 +546,42 @@
                                 <td class="p-4 border-b border-slate-200">
                                     <div class="flex items-center gap-3">
                                         <p class="text-sm font-semibold text-slate-700">
-                                            Hp
+                                            ProBook
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            HP
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            13
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            s/2.799
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            s/3.799
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-b border-slate-200">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm font-semibold text-slate-700">
+                                            1 año
                                         </p>
                                     </div>
                                 </td>
@@ -575,115 +591,6 @@
                                             class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-black uppercase rounded-md select-none whitespace-nowrap bg-red-300">
                                             <span class="">Agotado</span>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-max">
-                                        <button id="" class=" p-2 rounded-full" aria-label="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                            </svg>
-
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex space-x-2">
-                                        <button id="btnOpenEdit" class="bg-green-400 p-2 rounded-full btnOpenModal"
-                                            aria-label="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-                                            </svg>
-                                        </button>
-
-                                        <button class="bg-red-400 p-2 rounded-full">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- ***************************************** -->
-                            <tr>
-
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            001
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamiento
-                                            (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720p
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-2 border">
-                                    <img src="https://acortar.link/NXOFU7" class="w-16 h-16 object-cover rounded"
-                                        alt="Product Image" />
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamiento
-                                            (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720p
-                                        </p>
-                                    </div>
-                                </td>
-
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            $250.00
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            Monitores
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            Hp
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-max">
-                                        <div
-                                            class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-black uppercase rounded-md select-none whitespace-nowrap bg-red-300">
-                                            <span class="">Agotado</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-max">
-                                        <button id="" class=" p-2 rounded-full" aria-label="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                            </svg>
-
-                                        </button>
                                     </div>
                                 </td>
                                 <td class="p-4 border-b border-slate-200">
@@ -707,200 +614,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <!-- ***************************************** -->
-                            <tr>
 
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            001
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamiento
-                                            (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720p
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-2 border">
-                                    <img src="https://acortar.link/NXOFU7" class="w-16 h-16 object-cover rounded"
-                                        alt="Product Image" />
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamiento
-                                            (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720p
-                                        </p>
-                                    </div>
-                                </td>
-
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            $250.00
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            Monitores
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            Hp
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-max">
-                                        <div
-                                            class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-black uppercase rounded-md select-none whitespace-nowrap bg-red-300">
-                                            <span class="">Agotado</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-max">
-                                        <button id="" class=" p-2 rounded-full" aria-label="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                            </svg>
-
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex space-x-2">
-                                        <button id="btnOpenEdit" class="bg-green-400 p-2 rounded-full btnOpenModal"
-                                            aria-label="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-                                            </svg>
-                                        </button>
-
-                                        <button class="bg-red-400 p-2 rounded-full">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- ***************************************** -->
-                            <tr>
-
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            001
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamiento
-                                            (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720p
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-2 border">
-                                    <img src="https://acortar.link/NXOFU7" class="w-16 h-16 object-cover rounded"
-                                        alt="Product Image" />
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-[300px] overflow-hidden break-words whitespace-normal">
-                                        <p class="text-xs font-semibold text-slate-700">
-                                            HP Stream - Laptop BrightView HD de 14 pulgadas, Intel Celeron N4120, 16 GB
-                                            de RAM, 288 GB de almacenamiento
-                                            (128 GB eMMC + 160 GB de estación de acoplamiento), gráficos Intel UHD,
-                                            cámara web 720p
-                                        </p>
-                                    </div>
-                                </td>
-
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            $250.00
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            Monitores
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex items-center gap-3">
-                                        <p class="text-sm font-semibold text-slate-700">
-                                            Hp
-                                        </p>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-max">
-                                        <div
-                                            class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-black uppercase rounded-md select-none whitespace-nowrap bg-red-300">
-                                            <span class="">Agotado</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="w-max">
-                                        <button id="" class=" p-2 rounded-full" aria-label="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="p-4 border-b border-slate-200">
-                                    <div class="flex space-x-2">
-                                        <button id="btnOpenEdit" class="bg-green-400 p-2 rounded-full btnOpenModal"
-                                            aria-label="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-                                            </svg>
-                                        </button>
-
-                                        <button class="bg-red-400 p-2 rounded-full">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- ***************************************** -->
                         </tbody>
                     </table>
                 </div>
@@ -934,12 +648,6 @@
                                 required />
                         </div>
                         <div class="mb-4">
-                            <label class="block text-sm text-gray-700">Marca</label>
-                            <input type="text"
-                                class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-                                required />
-                        </div>
-                        <div class="mb-4">
                             <label class="block text-sm text-gray-700">Descripción</label>
                             <textarea
                                 class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
@@ -947,55 +655,67 @@
                         </div>
 
                         <div class="mb-4">
-                            <label class="block text-sm text-gray-700">Estado del Inventario</label>
+                            <label class="block text-sm text-gray-700">Categoria</label>
                             <select
                                 class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                 required>
-                                <option value="" disabled selected>Seleccione un Estado</option>
-                                <option>En Stock</option>
-                                <option>Agotado</option>
-                                <option>Existencia de Bajas</option>
+                                <option value="" disabled selected>Seleccione un campo</option>
+                                <option>Monitores</option>
+                                <option>Impresoras</option>
+                                <option>Laptops</option>
+                                <option>Perifericos</option>
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label class="block text-base text-gray-700">Categoría</label>
-                            <div class="grid grid-cols-2 gap-4 mt-1">
-                                <div class="flex items-center">
-                                    <input type="radio" name="categoria" value="accesorios" class="mr-2 w-5 h-5"
-                                        required />
-                                    <label class="text-sm">Monitores</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="radio" name="categoria" value="ropa" class="mr-2 w-5 h-5" required />
-                                    <label class="text-sm">Impresoras</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="radio" name="categoria" value="electronica" class="mr-2 w-5 h-5"
-                                        required />
-                                    <label class="text-sm">Laptops</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="radio" name="categoria" value="fitness" class="mr-2 w-5 h-5"
-                                        required />
-                                    <label class="text-sm">Perifericos</label>
-                                </div>
-                            </div>
+                            <label class="block text-sm text-gray-700">Modelo</label>
+                            <input type="text"
+                                class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                                required />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm text-gray-700">Marca</label>
+                            <input type="text"
+                                class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                                required />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm text-gray-700">Stock</label>
+                            <input type="number" min="0" step="1" inputmode="numeric" placeholder="0"
+                                class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                                required />
                         </div>
                         <div class="grid grid-cols-2 gap-4 mb-6">
                             <div>
-                                <label class="block text-sm text-gray-700">Precio</label>
+                                <label class="block text-sm text-gray-700">ULT Precio venta</label>
                                 <input type="number" min="0" step="0.01" inputmode="decimal" placeholder="$0.00"
                                     class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                     required />
                             </div>
                             <div>
-                                <label class="block text-sm text-gray-700">Cantidad</label>
-                                <input type="number" min="0" step="1" inputmode="numeric" placeholder="0"
+                                <label class="block text-sm text-gray-700">ULT Precio unidad</label>
+                                <input type="number" min="0" step="0.01" inputmode="decimal" placeholder="$0.00"
                                     class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                     required />
                             </div>
                         </div>
-                        <!-- Campos del formulario -->
+                        <div class="mb-4">
+                            <label class="block text-sm text-gray-700">Garantia</label>
+                            <input type="text"
+                                class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                                required />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm text-gray-700">Estado</label>
+                            <select
+                                class="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                                required>
+                                <option value="" disabled selected>Seleccione un campo</option>
+                                <option>En stock</option>
+                                <option>Agotado</option>
+                                <option>Existencia de vajas</option>
+                            </select>
+                        </div>
                         <div class="flex justify-end items-center gap-5">
                             <button type="button" class="flex text-red-800" id="btnCancelEdit"
                                 (click)="openConfirmClearModal()">
@@ -1015,41 +735,38 @@
                         </div>
                     </form>
                 </div>
-
-                <!-- Modal de Confirmación si de desea desacer editar producto -->
-                <div id="confirmClearModal"
-                    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50"
-                    style="background-color: rgba(0, 0, 0, 0.5);">
-                    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
-                        <h3 class="text-lg font-semibold mb-4">Confirmación</h3>
-                        <p class="mb-4">¿Deseas proceder con esta acción?</p>
-                        <div class="flex justify-end">
-                            <button id="btnConfirmYes" type="button"
-                                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-                                (click)="confirmClear()">Sí</button>
-                            <button id="btnConfirmNo" type="button"
-                                class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
-                                (click)="closeConfirmClearModal()">No</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+</div>
+<!-- Modal de Confirmación si de desea desacer editar producto -->
+<div id="confirmClearModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50"
+    style="background-color: rgba(0, 0, 0, 0.5);">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+        <h3 class="text-lg font-semibold mb-4">Confirmación</h3>
+        <p class="mb-4">¿Deseas proceder con esta acción?</p>
+        <div class="flex justify-end">
+            <button id="btnConfirmYes" type="button"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
+                (click)="confirmClear()">Sí</button>
+            <button id="btnConfirmNo" type="button"
+                class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
+                (click)="closeConfirmClearModal()">No</button>
+        </div>
+    </div>
+</div>
 
-    <!-- Modal de Confirmación de eiliminar en general un producto -->
-    <div id="confirm-clear-modal"
-        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50"
-        style="background-color: rgba(0, 0, 0, 0.5);">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-96">
-            <h3 class="text-lg font-semibold mb-4">Confirmación</h3>
-            <p class="mb-4">¿Deseas proceder con esta acción?</p>
-            <div class="flex justify-end">
-                <button id="btn-confirm-yes" type="button"
-                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">Sí</button>
-                <button id="btn-confirm-no" type="button"
-                    class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400">No</button>
-            </div>
+<!-- Modal de Confirmación -->
+<div id="confirm-clear-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50"
+    style="background-color: rgba(0, 0, 0, 0.5);">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+        <h3 class="text-lg font-semibold mb-4">Confirmación</h3>
+        <p class="mb-4">¿Deseas proceder con esta acción?</p>
+        <div class="flex justify-end">
+            <button id="btn-confirm-yes" type="button"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">Sí</button>
+            <button id="btn-confirm-no" type="button"
+                class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400">No</button>
         </div>
     </div>
 </div>

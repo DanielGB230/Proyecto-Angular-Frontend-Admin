@@ -2,11 +2,11 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-nuevo-usuario',
-  templateUrl: './nuevo-usuario.component.html',
-  styleUrls: ['./nuevo-usuario.component.css']
+  selector: 'app-nueva-categoria',
+  templateUrl: './nueva-categoria.component.html',
+  styleUrls: ['./nueva-categoria.component.css']
 })
-export class NuevoUsuarioComponent implements OnInit {
+export class NuevaCategoriaComponent implements OnInit {
   constructor(private router: Router) { }
 
   navigateTo(route: string) {
@@ -129,29 +129,24 @@ export class NuevoUsuarioComponent implements OnInit {
       }
     });
   }
-  /* modal para confirmacion de descarte y regresar*/
+
+  /* modal para confirmacion de descarte */
+  isModalOpen = false;
+  formData: any = {};
   openModal(): void {
-    const modal = document.getElementById('categorias');
-    if (modal) {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
+    this.isModalOpen = true;
   }
-
-  // Método para cerrar el modal
   closeModal(): void {
-    const modal = document.getElementById('categorias');
-    if (modal) {
-      modal.classList.remove('flex');
-      modal.classList.add('hidden');
-    }
+    this.isModalOpen = false;
   }
-
-  // Confirmar acción y redirigir
   confirmDiscard(): void {
-    this.closeModal();  // Cierra el modal
-
-    // Lógica para redirigir a la ruta especificada
-    this.router.navigate(['/administracion/gestion/usuarios']);
+    console.log('Cambios descartados');
+    this.clearForm(); // Limpia el formulario
+    this.router.navigate(['/administracion/gestion/productos/categorias']);
+    this.closeModal();
+  }
+  clearForm(): void {
+    this.formData = {};
   }
 }
+

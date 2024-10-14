@@ -129,5 +129,30 @@ export class NuevoProveedorComponent implements OnInit {
       }
     });
   }
+  /* modal para confirmacion de descarte y regresar*/
+  openModal(): void {
+    const modal = document.getElementById('categorias');
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  // Método para cerrar el modal
+  closeModal(): void {
+    const modal = document.getElementById('categorias');
+    if (modal) {
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+  }
+
+  // Confirmar acción y redirigir
+  confirmDiscard(): void {
+    this.closeModal();  // Cierra el modal
+
+    // Lógica para redirigir a la ruta especificada
+    this.router.navigate(['/administracion/gestion/proveedores']);
+  }
 }
 
