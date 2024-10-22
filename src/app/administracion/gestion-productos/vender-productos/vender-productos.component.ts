@@ -177,23 +177,139 @@ export class VenderProductosComponent implements OnInit {
     console.log('Cambios desechados y formulario cerrado.');
   }
 
-  // initializeConfirmButtons: Inicializa los eventos de los botones del modal de confirmación.
+
+  /* ********************************+********************************** */
   initializeConfirmButtons(): void {
-    const btnOpenModal = document.querySelector(".btn-open-confirm") as HTMLButtonElement;
-    const btnConfirmYes = document.getElementById("btn-confirm-yes") as HTMLButtonElement;
-    const btnConfirmNo = document.getElementById("btn-confirm-no") as HTMLButtonElement;
+    const btnOpenModal = document.getElementById("btn-open-cart") as HTMLButtonElement;
+    const btnOpenEdit = document.getElementById("btnOpenEdit") as HTMLButtonElement; // Botón para registrar la venta
+    const modalBackground = document.getElementById("cart-shop-modal") as HTMLElement;
 
+    // Agregar evento para abrir el modal del carrito
     if (btnOpenModal) {
-      btnOpenModal.addEventListener("click", () => this.openConfirmClearModal());
+      btnOpenModal.addEventListener("click", () => this.showCartConfirmationModal());
     }
 
-    if (btnConfirmYes) {
-      btnConfirmYes.addEventListener("click", () => this.confirmClear());
+    // Agregar evento para abrir el modal de registrar venta
+    if (btnOpenEdit) {
+      btnOpenEdit.addEventListener("click", () => this.handleRegisterSale());
     }
 
-    if (btnConfirmNo) {
-      btnConfirmNo.addEventListener("click", () => this.closeConfirmClearModal());
+    // Agregar evento para cerrar el modal al hacer clic en el fondo negro
+    if (modalBackground) {
+      modalBackground.addEventListener("click", (event) => {
+        if (event.target === modalBackground) {
+          this.closeCartModal();
+        }
+      });
+    }
+
+    // Agregar evento para cerrar el modal al hacer clic en el botón "hola"
+    const btnClose = document.querySelector(".fas.fa-times") as HTMLButtonElement;
+    if (btnClose) {
+      btnClose.addEventListener("click", () => this.closeCartModal());
+    }
+
+    // Contador de productos
+    const itemCountElement = document.querySelector(".item-count") as HTMLElement;
+    let itemCount = 1; // Inicializar el contador en 1
+
+    // Botones de incrementar y decrementar
+    const btnDecrement = document.querySelector(".btn-decrement") as HTMLButtonElement;
+    const btnIncrement = document.querySelector(".btn-increment") as HTMLButtonElement;
+
+    if (btnDecrement) {
+      btnDecrement.addEventListener("click", () => {
+        if (itemCount > 1) { // No permitir que baje de 1
+          itemCount--;
+          itemCountElement.textContent = itemCount.toString();
+        }
+      });
+    }
+
+    if (btnIncrement) {
+      btnIncrement.addEventListener("click", () => {
+        itemCount++; // Incrementar sin límite
+        itemCountElement.textContent = itemCount.toString();
+      });
     }
   }
+
+  // Función para abrir el modal del carrito
+  showCartConfirmationModal(): void {
+    const modal = document.getElementById("cart-shop-modal") as HTMLElement;
+    if (modal) {
+      modal.classList.remove("hidden");
+    }
+  }
+
+  // Función para cerrar el modal del carrito
+  closeCartModal(): void {
+    const modal = document.getElementById("cart-shop-modal") as HTMLElement;
+    if (modal) {
+      modal.classList.add("hidden");
+    }
+  }
+
+  // Nueva función para manejar la acción del botón "Registrar la venta"
+  handleRegisterSale(): void {
+    // Cerrar el modal del carrito
+    this.closeCartModal();
+
+    // Aquí puedes agregar la lógica que necesites, como cambiar de vista o mostrar otro componente/modal.
+
+    console.log('Redirigiendo a registrar la venta...');
+  }
+
+  /* Confirmacion de desacer+++++++++++++++++++++++++++++++ */
+  isModalOpen: boolean = false;
+
+  openCancelModal(): void {
+    this.isModalOpen = true;
+  }
+  closeCancelModal(): void {
+    this.isModalOpen = false;
+  }
+  confirmCancel(): void {
+    this.isModalOpen = false;
+    console.log('Acción confirmada');
+
+    window.location.reload();
+  }
+
+  /* Este es el unico codigo para desplegar el filtro de busqueda de ventas*/
+  isDropdownOpen: boolean = false;
+
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  /* desplegar metodo de pago targeta */
+  toggleMetodoPago(metodo: string) {
+    const detallesPago = document.getElementById(`detallesPago${metodo}`);
+
+    if (detallesPago) {
+      detallesPago.classList.toggle('hidden');
+    }
+  }
+
+  /* pago con yape */
+  toggleBilleteraPago(billetera: string) {
+    const detallesPago = document.getElementById(`detallesPago${billetera}`);
+
+    if (detallesPago) {
+      detallesPago.classList.toggle('hidden'); // Alterna la visibilidad
+    }
+  }
+  /* pago con efectivo */
+  toggleEfectivoPago(metodo: string) {
+    const detallesPago = document.getElementById(`detallesPago${metodo}`);
+
+    if (detallesPago) {
+      detallesPago.classList.toggle('hidden'); // Alterna la visibilidad
+    }
+  }
+
+
+
 }
 
