@@ -23,6 +23,12 @@ import { MarcasComponent } from './administracion/gestion-productos/marcas/marca
 import { CategoriasComponent } from './administracion/gestion-productos/categorias/categorias.component';
 import { NuevaCategoriaComponent } from './administracion/gestion-productos/nueva-categoria/nueva-categoria.component';
 import { NuevaMarcaComponent } from './administracion/gestion-productos/nueva-marca/nueva-marca.component';
+import { PuestosComponent } from './administracion/gestion-usuarios/puestos/puestos.component';
+import { NuevoPuestoComponent } from './administracion/gestion-usuarios/nuevo-puesto/nuevo-puesto.component';
+import { ClientesComponent } from './administracion/gestion-usuarios/clientes/clientes.component';
+import { NuevoClienteComponent } from './administracion/gestion-usuarios/nuevo-cliente/nuevo-cliente.component';
+import { DeliveryComponent } from './administracion/relaciones-proveedores/delivery/delivery.component';
+import { RegistroDeliveryComponent } from './administracion/relaciones-proveedores/registro-delivery/registro-delivery.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +52,12 @@ import { NuevaMarcaComponent } from './administracion/gestion-productos/nueva-ma
     CategoriasComponent,
     NuevaCategoriaComponent,
     NuevaMarcaComponent,
+    PuestosComponent,
+    NuevoPuestoComponent,
+    ClientesComponent,
+    NuevoClienteComponent,
+    DeliveryComponent,
+    RegistroDeliveryComponent,
   ],
   imports: [
     BrowserModule,

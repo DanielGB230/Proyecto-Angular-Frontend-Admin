@@ -2,12 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriasComponent } from './administracion/gestion-productos/categorias/categorias.component';
 import { ListaProductosComponent } from './administracion/gestion-productos/lista-productos/lista-productos.component';
+import { MarcasComponent } from './administracion/gestion-productos/marcas/marcas.component';
+import { NuevaCategoriaComponent } from './administracion/gestion-productos/nueva-categoria/nueva-categoria.component';
+import { NuevaMarcaComponent } from './administracion/gestion-productos/nueva-marca/nueva-marca.component';
 import { NuevoProductoComponent } from './administracion/gestion-productos/nuevo-producto/nuevo-producto.component';
 import { VenderProductosComponent } from './administracion/gestion-productos/vender-productos/vender-productos.component';
+import { ClientesComponent } from './administracion/gestion-usuarios/clientes/clientes.component';
 import { EmpleadosComponent } from './administracion/gestion-usuarios/empleados/empleados.component';
+import { NuevoClienteComponent } from './administracion/gestion-usuarios/nuevo-cliente/nuevo-cliente.component';
 import { NuevoEmpleadoComponent } from './administracion/gestion-usuarios/nuevo-empleado/nuevo-empleado.component';
+import { NuevoPuestoComponent } from './administracion/gestion-usuarios/nuevo-puesto/nuevo-puesto.component';
 import { NuevoRolComponent } from './administracion/gestion-usuarios/nuevo-rol/nuevo-rol.component';
 import { NuevoUsuarioComponent } from './administracion/gestion-usuarios/nuevo-usuario/nuevo-usuario.component';
+import { PuestosComponent } from './administracion/gestion-usuarios/puestos/puestos.component';
 import { RolesComponent } from './administracion/gestion-usuarios/roles/roles.component';
 import { UsuariosComponent } from './administracion/gestion-usuarios/usuarios/usuarios.component';
 import { DashboardComponent } from './administracion/gestion-ventas/dashboard/dashboard.component';
@@ -17,9 +24,8 @@ import { NuevoProveedorComponent } from './administracion/relaciones-proveedores
 import { NuevoServicioComponent } from './administracion/relaciones-proveedores/nuevo-servicio/nuevo-servicio.component';
 import { ProveedoresComponent } from './administracion/relaciones-proveedores/proveedores/proveedores.component';
 import { ServicioTecnicoComponent } from './administracion/relaciones-proveedores/servicio-tecnico/servicio-tecnico.component';
-import { NuevaCategoriaComponent } from './administracion/gestion-productos/nueva-categoria/nueva-categoria.component';
-import { MarcasComponent } from './administracion/gestion-productos/marcas/marcas.component';
-import { NuevaMarcaComponent } from './administracion/gestion-productos/nueva-marca/nueva-marca.component';
+import { DeliveryComponent } from './administracion/relaciones-proveedores/delivery/delivery.component';
+import { RegistroDeliveryComponent } from './administracion/relaciones-proveedores/registro-delivery/registro-delivery.component';
 
 const routes: Routes = [
   { path: 'administracion/inicio', component: InicioComponent },
@@ -42,6 +48,12 @@ const routes: Routes = [
   { path: 'administracion/gestion/productos/categorias/nuevo', component: NuevaCategoriaComponent },
   { path: 'administracion/gestion/productos/marcas', component: MarcasComponent },
   { path: 'administracion/gestion/productos/marcas/nuevo', component: NuevaMarcaComponent },
+  { path: 'administracion/gestion/usuarios/puestos', component: PuestosComponent },
+  { path: 'administracion/gestion/usuarios/puestos/nuevo', component: NuevoPuestoComponent },
+  { path: 'administracion/gestion/usuarios/cliente/nuevo', component: NuevoClienteComponent },
+  { path: 'administracion/gestion/usuarios/cliente', component: ClientesComponent },
+  { path: 'administracion/gestion/provedores/delivery', component: DeliveryComponent },
+  { path: 'administracion/gestion/provedores/delivery/registro', component: RegistroDeliveryComponent },
 
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ]

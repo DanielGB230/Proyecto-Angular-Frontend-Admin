@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,12 +6,13 @@ import { Router } from '@angular/router';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements OnInit {
+export class InicioComponent implements OnInit, AfterViewInit {
   constructor(private router: Router) { }
 
   navigateTo(route: string) {
     this.router.navigate([route]);
   }
+
   /* Propiedades de la barra lateral ******************************** */
   sidebar!: HTMLElement | null;
   menuBtn!: HTMLElement | null;
@@ -20,6 +21,11 @@ export class InicioComponent implements OnInit {
   isSidebarActive: boolean = false;
 
   ngOnInit(): void {
+    // Aquí puedes agregar otras inicializaciones que no interactúen directamente con el DOM
+  }
+
+  // Se ejecuta después de que la vista y el DOM hayan sido completamente inicializados
+  ngAfterViewInit(): void {
     this.sidebar = document.getElementById("sidebar");
     this.menuBtn = document.getElementById("menu-btn");
     this.closeBtn = document.getElementById("close-btn");
@@ -84,50 +90,53 @@ export class InicioComponent implements OnInit {
     const imagePreview = document.getElementById('image-preview') as HTMLElement;
 
     // Validación del formulario al enviarlo
-    form.addEventListener('submit', (event: Event) => {
-      errorMessage.textContent = '';
-      errorMessage.classList.add('hidden');
+    if (form) {
+      form.addEventListener('submit', (event: Event) => {
+        errorMessage.textContent = '';
+        errorMessage.classList.add('hidden');
 
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        errorMessage.textContent = 'Por favor, completa todos los campos requeridos.';
-        errorMessage.classList.remove('hidden');
-      }
-    });
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          errorMessage.textContent = 'Por favor, completa todos los campos requeridos.';
+          errorMessage.classList.remove('hidden');
+        }
+      });
+    }
 
     // Manejo del cambio en el input de archivos
-    fileInput.addEventListener('change', (event: Event) => {
-      const files = (event.target as HTMLInputElement).files;
-      console.log('Archivos seleccionados:', files); // Log para verificar archivos seleccionados
-      imagePreview.innerHTML = ''; // Limpiar vista previa anterior
+    if (fileInput) {
+      fileInput.addEventListener('change', (event: Event) => {
+        const files = (event.target as HTMLInputElement).files;
+        console.log('Archivos seleccionados:', files); // Log para verificar archivos seleccionados
+        imagePreview.innerHTML = ''; // Limpiar vista previa anterior
 
-      if (files) {
-        Array.from(files).forEach(file => {
-          const reader = new FileReader();
+        if (files) {
+          Array.from(files).forEach(file => {
+            const reader = new FileReader();
 
-          reader.onload = (e: ProgressEvent<FileReader>) => {
-            console.log('Cargando archivo:', e.target?.result); // Log para verificar el archivo cargado
+            reader.onload = (e: ProgressEvent<FileReader>) => {
+              console.log('Cargando archivo:', e.target?.result); // Log para verificar el archivo cargado
 
-            const imageContainer = document.createElement('div');
-            imageContainer.className = 'relative inline-block m-2';
+              const imageContainer = document.createElement('div');
+              imageContainer.className = 'relative inline-block m-2';
 
-            const img = document.createElement('img');
-            img.src = e.target?.result as string;
-            img.className = 'h-32 w-32 object-cover rounded-md border border-gray-300';
+              const img = document.createElement('img');
+              img.src = e.target?.result as string;
+              img.className = 'h-32 w-32 object-cover rounded-md border border-gray-300';
 
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'X';
-            deleteButton.className = 'absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs';
-            deleteButton.onclick = () => imageContainer.remove(); // Eliminar la imagen al hacer clic
+              const deleteButton = document.createElement('button');
+              deleteButton.textContent = 'X';
+              deleteButton.className = 'absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs';
+              deleteButton.onclick = () => imageContainer.remove(); // Eliminar la imagen al hacer clic
 
-            imageContainer.append(img, deleteButton);
-            imagePreview.appendChild(imageContainer); // Añadir el contenedor de imagen a la vista previa
-          };
+              imageContainer.append(img, deleteButton);
+              imagePreview.appendChild(imageContainer); // Añadir el contenedor de imagen a la vista previa
+            };
 
-          reader.readAsDataURL(file); // Leer el archivo como URL de datos
-        });
-      }
-    });
+            reader.readAsDataURL(file); // Leer el archivo como URL de datos
+          });
+        }
+      });
+    }
   }
 }
-
