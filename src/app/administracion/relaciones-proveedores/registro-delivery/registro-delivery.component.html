@@ -218,64 +218,74 @@
     </nav>
     <!-- ************************************************************************************************** -->
     <!-- Contenido principal -->
-    <div class="w-full mt-2 p-4 bg-gray-200"> <!-- El div ocupa toda la pantalla -->
+    <div class="w-full mt-2 p-4 bg-gray-200">
         <div id="scrollable-content"
             class="relative flex flex-col w-full h-full p-3 text-black bg-white shadow-md rounded-xl bg-clip-border ">
             <div class="relative flex flex-col w-full overflow-y-auto">
                 <div class="container mx-auto p-4 shadow-md rounded-md">
                     <div id="error-message" class="hidden text-red-500 mb-4"></div>
+
                     <div class="mb-8">
-                        <h1 class="text-2xl font-extrabold mb-4">Nuevo Proveedor</h1>
+                        <h1 class="text-2xl font-extrabold mb-4">Resitro de delivery</h1>
                         <form id="product-form">
                             <div class="flex flex-col md:flex-row justify-between space-x-0 md:space-x-4">
                                 <div class="flex-1 space-y-4">
                                     <div>
                                         <label for="nombre-completo"
-                                            class="block text-sm font-medium text-gray-700">Persona de contacto</label>
-                                        <input id="nombre-completo" type="text" placeholder="Nombre completo" required
-                                            class="w-full border border-gray-500 p-2 rounded-md focus:ring focus:ring-blue-500">
-                                    </div>
-                                    <div>
-                                        <label for="razon-social" class="block text-sm font-medium text-gray-700">Razón
-                                            social</label>
-                                        <input id="razon-social" type="text" placeholder="Razón social" required
+                                            class="block text-sm font-medium text-gray-700">Nombres</label>
+                                        <input id="nombre-completo" type="text" required
                                             class="w-full border border-gray-500 p-2 rounded-md focus:ring focus:ring-blue-500">
                                     </div>
 
-                                    <div class="grid flex-grow md:grid-cols-2 gap-4">
+                                    <div class="grid flex-grow md:grid-cols-3 gap-4">
                                         <div>
-                                            <label for="tipo-cliente"
-                                                class="block text-sm font-medium text-gray-700">Ruc</label>
-                                            <input id="tipo-cliente" type="text" placeholder="Ruc de la empresa"
+                                            <label for="numero-documento-secundario"
+                                                class="block text-sm font-medium text-gray-700">Apellido Paterno</label>
+                                            <input id="numero-documento-secundario" type="text" placeholder="Apellido"
                                                 required
                                                 class="w-full border border-gray-500 p-2 rounded-md focus:ring focus:ring-blue-500">
                                         </div>
                                         <div>
-                                            <label for="numero-documento"
+                                            <label for="correo-electronico"
+                                                class="block text-sm font-medium text-gray-700">Nemero de
+                                                documento</label>
+                                            <input id="correo-electronico" type="text" placeholder="Apellido" required
+                                                class="w-full border border-gray-500 p-2 rounded-md focus:ring focus:ring-blue-500">
+                                        </div>
+                                        <div>
+                                            <label for="correo-electronico"
                                                 class="block text-sm font-medium text-gray-700">Telefono</label>
-                                            <input id="numero-documento" type="text" placeholder="Número de contacto"
+                                            <input id="correo-electronico" type="text" placeholder="+51 999 999 999"
                                                 required
                                                 class="w-full border border-gray-500 p-2 rounded-md focus:ring focus:ring-blue-500">
                                         </div>
                                     </div>
                                     <div>
-                                        <label for="correo-electronico"
-                                            class="block text-sm font-medium text-gray-700">Correo
-                                            electrónico</label>
-                                        <input id="correo-electronico" type="text" placeholder="Correo electrónico"
-                                            required
+                                        <label for="direccion"
+                                            class="block text-sm font-medium text-gray-700">Email</label>
+                                        <input id="direccion" type="text" required
                                             class="w-full border border-gray-500 p-2 rounded-md focus:ring focus:ring-blue-500">
                                     </div>
                                     <div>
-                                        <label for="numero-documento-secundario"
+                                        <label for="direccion"
                                             class="block text-sm font-medium text-gray-700">Direccion</label>
-                                        <input id="numero-documento-secundario" type="text"
-                                            placeholder="Direccion del local" required
+                                        <input id="direccion" type="text" required
                                             class="w-full border border-gray-500 p-2 rounded-md focus:ring focus:ring-blue-500">
                                     </div>
+                                        <div class="mb-4">
+                                            <label for="correo-electronico"
+                                                class="block text-sm font-medium text-gray-700">Estado</label>
+                                            <select
+                                                class="w-full border border-gray-500 p-2 rounded-md focus:ring focus:ring-blue-500"
+                                                required>
+                                                <option value="" disabled selected>Seleccione un Estado</option>
+                                                <option>Entragado</option>
+                                                <option>En proceso</option>
+                                            </select>
+                                        </div>
+                                        
                                 </div>
                             </div>
-
                             <div class="flex justify-end mt-6 space-x-4">
                                 <button type="button" class="border border-red-700 text-red-500 px-4 py-2 rounded-md"
                                     (click)="openModal()">
@@ -291,7 +301,6 @@
         </div>
     </div>
 </div>
-
 <!-- Modal de Confirmación -->
 <div id="categorias" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 z-50"
     style="background-color: rgba(0, 0, 0, 0.5);">
