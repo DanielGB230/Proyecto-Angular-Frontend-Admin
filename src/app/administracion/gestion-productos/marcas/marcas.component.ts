@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Brand, BrandBody } from 'src/app/shared/models/brand';
+import { BrandService } from 'src/app/shared/services/brand.service';
 
 @Component({
   selector: 'app-marcas',
@@ -7,27 +10,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./marcas.component.css']
 })
 export class MarcasComponent implements OnInit {
-
-  constructor(private router: Router) { }
-
-  navigateTo(route: string) {
-    this.router.navigate([route]);
+  cargaDatos: 'none' | 'loading' | 'done' | 'error' = "none";
+  createBrandState: 'none' | 'loading' | 'done' | 'error' = "none";
+  brands: Brand[] = [];
+  showFormBrand: 'none' | 'edit' | 'add' = 'none';
+  formBrand: FormGroup;
+  isEditing: boolean = false;
+  currentBrand: Brand | null = null;
+  constructor(
+    private brandService: BrandService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {
+    this.formBrand = this.fb.group({
+      name: ['',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]]
+    });
   }
-  // Propiedades: Definimos las propiedades necesarias para interactuar con los elementos HTML.
-  // Propiedades de la barra lateral (sidebar)
-  sidebar!: HTMLElement | null;
-  menuBtn!: HTMLElement | null;
-  closeBtn!: HTMLElement | null;
-  overlay!: HTMLElement | null;
 
-  // Propiedades del modal de edición
-  modalEdit!: HTMLElement | null;
-  btnCloseEdit!: HTMLElement | null;
-  btnCancelEdit!: HTMLElement | null;
-  btnSaveEdit!: HTMLElement | null;
-
-  // ngOnInit: Inicializa los elementos del DOM al cargar el componente.
   ngOnInit(): void {
+    this.listAll();
+
     this.sidebar = document.getElementById("sidebar");
     this.menuBtn = document.getElementById("menu-btn");
     this.closeBtn = document.getElementById("close-btn");
@@ -44,6 +47,81 @@ export class MarcasComponent implements OnInit {
     // Inicializa los eventos del modal de confirmación
     this.initializeConfirmButtons();
   }
+
+  listAll() {
+    this.cargaDatos = 'loading';
+    this.brandService.list().subscribe({
+      next: (data) => {
+        this.cargaDatos = 'done',
+        this.brands = data;
+      },
+      error: (_) => {
+        this.cargaDatos = 'error';
+      }
+    });
+  }
+
+  addBrand() {
+    this.showFormBrand = "add";
+    this.createBrandState = 'none';
+  }
+
+  removeBrand(brand: Brand) {
+    // Lógica para eliminar, podrías mostrar un modal de confirmación antes
+    this.brandService.remove(brand.id).subscribe(() => {
+      this.brands = this.brands.filter(b => b.id !== brand.id);
+      console.log('Marca eliminada');
+    }, (err) => {
+      console.error('Error al eliminar la marca', err);
+    });
+  }
+  confirmDelete(brandId: number) {
+    this.brandService.remove(brandId).subscribe({
+      next: (res) => {
+        this.brands = this.brands.filter(b => b.id != brandId);
+      },
+      error: (err) => {}
+    });
+  }
+  cancelDelete(brand: Brand) {
+    brand.remove = false;
+  }
+
+  createBrand(){
+    console.log(this.formBrand);
+    this.createBrandState = 'loading';
+    this.brandService.create(this.formBrand.value as BrandBody).subscribe({
+      next: (data) => {
+        this.createBrandState = 'done';
+        // this.listAll();
+        this.brands.push(data);
+      },
+      error: (err) => {
+        this.createBrandState = 'error';
+      }
+    });
+  }
+
+  
+
+
+
+ 
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
+  // Propiedades: Definimos las propiedades necesarias para interactuar con los elementos HTML.
+  // Propiedades de la barra lateral (sidebar)
+  sidebar!: HTMLElement | null;
+  menuBtn!: HTMLElement | null;
+  closeBtn!: HTMLElement | null;
+  overlay!: HTMLElement | null;
+
+  // Propiedades del modal de edición
+  modalEdit!: HTMLElement | null;
+  btnCloseEdit!: HTMLElement | null;
+  btnCancelEdit!: HTMLElement | null;
+  btnSaveEdit!: HTMLElement | null;
 
   // initializeEventListeners: Asigna eventos a los botones de la barra lateral y el modal de edición.
   initializeEventListeners(): void {

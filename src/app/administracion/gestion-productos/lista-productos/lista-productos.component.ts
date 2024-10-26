@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ProductBody, Producto } from 'src/app/shared/models/producto';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'app-lista-productos',
@@ -7,7 +10,113 @@ import { Router } from '@angular/router';
   styleUrls: ['./lista-productos.component.css']
 })
 export class ListaProductosComponent implements OnInit {
-  constructor(private router: Router) {}
+  cargaDatos: 'none' | 'loading' | 'done' | 'error' = "none";
+  createProductState: 'none' | 'loading' | 'done' | 'error' = "none";
+  products: Producto[] = [];
+  showFormProduct: 'none' | 'edit' | 'add' = 'none';
+  formProduct: FormGroup;
+  constructor(
+    private productService: ProductService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {
+    this.formProduct = this.fb.group({
+      Nombre: ['', [Validators.required]],
+      Imagen: ['', [Validators.required]],
+      Descripcion: ['', [Validators.required]],
+      Modelo: ['', [Validators.required]],
+      PrecioVenta: [null, [Validators.required, Validators.min(0)]],
+      UtilidadPrecioVenta: [null, [Validators.required, Validators.min(0)]],
+      UtilidadPorcentaje: ['', [Validators.required, Validators.pattern(/^\d+(\.\d+)?%?$/)]],
+      Stock: [null, [Validators.required, Validators.min(0)]],
+      Garantia: [null, [Validators.required, Validators.min(0)]]
+    });
+  }
+
+  ngOnInit(): void {
+    // Llamando la API
+    this.listAll();
+
+    this.sidebar = document.getElementById("sidebar");
+    this.menuBtn = document.getElementById("menu-btn");
+    this.closeBtn = document.getElementById("close-btn");
+    this.overlay = document.getElementById("overlay");
+
+    this.modalEdit = document.getElementById("modalEdit");
+    this.btnCloseEdit = document.getElementById("btnCloseEdit");
+    this.btnCancelEdit = document.getElementById("btnCancelEdit");
+    this.btnSaveEdit = document.getElementById("btnSaveEdit");
+
+    // Inicializa los eventos de la barra lateral y del modal de edición
+    this.initializeEventListeners();
+
+    // Inicializa los eventos del modal de confirmación
+    this.initializeConfirmButtons();
+  }
+  
+  // Implementando APIS
+  listAll() {
+    this.cargaDatos = 'loading';
+    this.productService.list().subscribe({
+      next: (data) => {
+        this.cargaDatos = 'done',
+        this.products = data;
+      },
+      error: (_) => {
+        this.cargaDatos = 'error';
+      }
+    });
+  }
+
+  addProduct() {
+    this.showFormProduct = "add";
+    this.createProductState = 'none';
+  }
+
+  removeProduct(product: Producto) {
+    // Lógica para eliminar, podrías mostrar un modal de confirmación antes
+    this.productService.remove(product.id).subscribe(() => {
+      this.products = this.products.filter(b => b.id !== product.id);
+      console.log('Marca eliminada');
+    }, (err) => {
+      console.error('Error al eliminar la marca', err);
+    });
+  }
+  
+  confirmDelete(productId: number) {
+    this.productService.remove(productId).subscribe({
+      next: (res) => {
+        // this.listAll();
+        this.products = this.products.filter(b => b.id != productId);
+      },
+      error: (err) => {}
+    });
+  }
+  cancelDelete(product: Producto) {
+    product.remove = false;
+  }
+
+  createProduct(){
+    console.log(this.formProduct);
+    this.createProductState = 'loading';
+    this.productService.create(this.formProduct.value as ProductBody).subscribe({
+      next: (data) => {
+        this.createProductState = 'done';
+        // this.listAll();
+        this.products.push(data);
+      },
+      error: (err) => {
+        this.createProductState = 'error';
+      }
+    });
+  }
+
+  
+
+
+
+
+
 
   navigateTo(route: string) {
     this.router.navigate([route]);
@@ -25,25 +134,6 @@ export class ListaProductosComponent implements OnInit {
   btnCloseEdit!: HTMLElement | null;
   btnCancelEdit!: HTMLElement | null;
   btnSaveEdit!: HTMLElement | null;
-
-  // ngOnInit: Inicializa los elementos del DOM al cargar el componente.
-  ngOnInit(): void {
-    this.sidebar = document.getElementById("sidebar");
-    this.menuBtn = document.getElementById("menu-btn");
-    this.closeBtn = document.getElementById("close-btn");
-    this.overlay = document.getElementById("overlay");
-
-    this.modalEdit = document.getElementById("modalEdit");
-    this.btnCloseEdit = document.getElementById("btnCloseEdit");
-    this.btnCancelEdit = document.getElementById("btnCancelEdit");
-    this.btnSaveEdit = document.getElementById("btnSaveEdit");
-
-    // Inicializa los eventos de la barra lateral y del modal de edición
-    this.initializeEventListeners();
-
-    // Inicializa los eventos del modal de confirmación
-    this.initializeConfirmButtons();
-  }
 
   // initializeEventListeners: Asigna eventos a los botones de la barra lateral y el modal de edición.
   initializeEventListeners(): void {

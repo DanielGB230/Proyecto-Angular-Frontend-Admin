@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Profile } from 'src/app/shared/models/profile';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,10 +9,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit, AfterViewInit {
-  constructor(private router: Router) { }
+  dropdownOpen = false;
+  profile?: Profile;
+  constructor(
+    private router: Router,
+    private authService: AuthenticationService
+  ) { }
+  ngOnInit(): void {
+    this.authService.getProfile().subscribe({
+      next: (value) => this.profile = value,
+    });
+  }
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
 
   navigateTo(route: string) {
     this.router.navigate([route]);
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
   /* Propiedades de la barra lateral ******************************** */
@@ -19,10 +39,6 @@ export class InicioComponent implements OnInit, AfterViewInit {
   closeBtn!: HTMLElement | null;
   overlay!: HTMLElement | null;
   isSidebarActive: boolean = false;
-
-  ngOnInit(): void {
-    // Aquí puedes agregar otras inicializaciones que no interactúen directamente con el DOM
-  }
 
   // Se ejecuta después de que la vista y el DOM hayan sido completamente inicializados
   ngAfterViewInit(): void {

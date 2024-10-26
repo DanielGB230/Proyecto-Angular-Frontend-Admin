@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ListaProductosComponent } from './administracion/gestion-productos/lista-productos/lista-productos.component';
 import { VenderProductosComponent } from './administracion/gestion-productos/vender-productos/vender-productos.component';
@@ -29,6 +29,10 @@ import { ClientesComponent } from './administracion/gestion-usuarios/clientes/cl
 import { NuevoClienteComponent } from './administracion/gestion-usuarios/nuevo-cliente/nuevo-cliente.component';
 import { DeliveryComponent } from './administracion/relaciones-proveedores/delivery/delivery.component';
 import { RegistroDeliveryComponent } from './administracion/relaciones-proveedores/registro-delivery/registro-delivery.component';
+import { RegisterComponent } from './administracion/auth/register/register.component';
+import { LoginComponent } from './administracion/auth/login/login.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { NuevoProductoComponent } from './administracion/gestion-productos/nuevo-producto/nuevo-producto.component';
 
 @NgModule({
   declarations: [
@@ -58,12 +62,18 @@ import { RegistroDeliveryComponent } from './administracion/relaciones-proveedor
     NuevoClienteComponent,
     DeliveryComponent,
     RegistroDeliveryComponent,
+    RegisterComponent,
+    LoginComponent,
+    NuevoProductoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    SweetAlert2Module
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

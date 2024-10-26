@@ -26,8 +26,12 @@ import { ProveedoresComponent } from './administracion/relaciones-proveedores/pr
 import { ServicioTecnicoComponent } from './administracion/relaciones-proveedores/servicio-tecnico/servicio-tecnico.component';
 import { DeliveryComponent } from './administracion/relaciones-proveedores/delivery/delivery.component';
 import { RegistroDeliveryComponent } from './administracion/relaciones-proveedores/registro-delivery/registro-delivery.component';
+import { LoginComponent } from './administracion/auth/login/login.component';
+import { RegisterComponent } from './administracion/auth/register/register.component';
 
 const routes: Routes = [
+  { path: 'auth/login', component:LoginComponent},
+  { path: 'auth/register', component:RegisterComponent},
   { path: 'administracion/inicio', component: InicioComponent },
   { path: 'administracion/gestion/producto/nuevo', component: NuevoProductoComponent },
   { path: 'administracion/gestion/producto/lista', component: ListaProductosComponent },
@@ -54,8 +58,7 @@ const routes: Routes = [
   { path: 'administracion/gestion/usuarios/cliente', component: ClientesComponent },
   { path: 'administracion/gestion/provedores/delivery', component: DeliveryComponent },
   { path: 'administracion/gestion/provedores/delivery/registro', component: RegistroDeliveryComponent },
-
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'auth/login', pathMatch: 'full' },
 ]
 
 @NgModule({

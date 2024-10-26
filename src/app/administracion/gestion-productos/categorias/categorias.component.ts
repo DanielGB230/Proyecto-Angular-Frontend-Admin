@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Category, CategoryBody } from 'src/app/shared/models/category';
+import { CategoryService } from 'src/app/shared/services/category.service';
 
 @Component({
   selector: 'app-categorias',
@@ -8,22 +11,21 @@ import { Router } from '@angular/router';
 })
 export class CategoriasComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-  navigateTo(route: string) {
-    this.router.navigate([route]);
+  cargaDatos: 'none' | 'loading' | 'done' | 'error' = "none";
+  createCategoryState: 'none' | 'loading' | 'done' | 'error' = "none";
+  category: Category[] = [];
+  showFormCategory: 'none' | 'edit' | 'add' = 'none';
+  formCategory: FormGroup;
+  constructor(
+    private categoryService: CategoryService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {
+    this.formCategory = this.fb.group({
+      name: ['',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]]
+    });
   }
-  // Propiedades de la barra lateral (sidebar)
-  sidebar!: HTMLElement | null;
-  menuBtn!: HTMLElement | null;
-  closeBtn!: HTMLElement | null;
-  overlay!: HTMLElement | null;
-
-  // Propiedades del modal de edición
-  modalEdit!: HTMLElement | null;
-  btnCloseEdit!: HTMLElement | null;
-  btnCancelEdit!: HTMLElement | null;
-  btnSaveEdit!: HTMLElement | null;
 
   // ngOnInit: Inicializa los elementos del DOM al cargar el componente.
   ngOnInit(): void {
@@ -42,7 +44,80 @@ export class CategoriasComponent implements OnInit {
 
     // Inicializa los eventos del modal de confirmación
     this.initializeConfirmButtons();
+
+    this.listAll();
   }
+
+  listAll() {
+    this.cargaDatos = 'loading';
+    this.categoryService.list().subscribe({
+      next: (data) => {
+        this.cargaDatos = 'done',
+        this.category = data;
+      },
+      error: (_) => {
+        this.cargaDatos = 'error';
+      }
+    });
+  }
+  addCategory() {
+    this.showFormCategory = "add";
+    this.createCategoryState = 'none';
+  }
+
+  removeCategory(category: Category) {
+    category.remove = true;
+  }
+  confirmDelete(categoryId: number) {
+    this.categoryService.remove(categoryId).subscribe({
+      next: (res) => {
+        // this.listAll();
+        this.category = this.category.filter(b => b.id != categoryId);
+      },
+      error: (err) => {}
+    });
+  }
+  cancelDelete(category: Category) {
+    category.remove = false;
+  }
+
+  createCategory(){
+    console.log(this.formCategory );
+    this.createCategoryState = 'loading';
+    this.categoryService.create(this.formCategory.value as CategoryBody).subscribe({
+      next: (data) => {
+        this.createCategoryState = 'done';
+        // this.listAll();
+        this.category.push(data);
+      },
+      error: (err) => {
+        this.createCategoryState = 'error';
+      }
+    });
+  }
+
+
+
+
+
+
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
+  // Propiedades de la barra lateral (sidebar)
+  sidebar!: HTMLElement | null;
+  menuBtn!: HTMLElement | null;
+  closeBtn!: HTMLElement | null;
+  overlay!: HTMLElement | null;
+
+  // Propiedades del modal de edición
+  modalEdit!: HTMLElement | null;
+  btnCloseEdit!: HTMLElement | null;
+  btnCancelEdit!: HTMLElement | null;
+  btnSaveEdit!: HTMLElement | null;
+
+  
 
   // initializeEventListeners: Asigna eventos a los botones de la barra lateral y el modal de edición.
   initializeEventListeners(): void {

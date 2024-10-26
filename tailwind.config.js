@@ -9,7 +9,9 @@ module.exports = {
     "./src/app/catalogo/categories/computadora/computadora.component.html",
     "./src/app/catalogo/car-shopping/car-shopping.component.html",
     "./src/app/administracion/panel-principal/panel-principal.component.html",
-    "./src/app/administracion/inventarioProductos/create-productos/create-productos.component.html"
+    "./src/app/administracion/inventarioProductos/create-productos/create-productos.component.html",
+    "./src/app/administracion/auth/login/login.component.html",
+    "./src/app/administracion/auth/register/register.component.html"
   ],
   
   theme: {
