@@ -1,10 +1,14 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgIf, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-vender-productos',
-  templateUrl: './vender-productos.component.html',
-  styleUrls: ['./vender-productos.component.css']
+    selector: 'app-vender-productos',
+    templateUrl: './vender-productos.component.html',
+    styleUrls: ['./vender-productos.component.css'],
+    standalone: true,
+    imports: [NgIf, NgClass, FormsModule]
 })
 export class VenderProductosComponent implements OnInit {
 

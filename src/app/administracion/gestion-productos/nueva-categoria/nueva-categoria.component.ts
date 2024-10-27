@@ -1,10 +1,14 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-nueva-categoria',
-  templateUrl: './nueva-categoria.component.html',
-  styleUrls: ['./nueva-categoria.component.css']
+    selector: 'app-nueva-categoria',
+    templateUrl: './nueva-categoria.component.html',
+    styleUrls: ['./nueva-categoria.component.css'],
+    standalone: true,
+    imports: [FormsModule, NgClass]
 })
 export class NuevaCategoriaComponent implements OnInit {
   constructor(private router: Router) { }

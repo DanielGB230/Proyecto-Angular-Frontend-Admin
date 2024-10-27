@@ -2,9 +2,10 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-usuarios',
-  templateUrl: './usuarios.component.html',
-  styleUrls: ['./usuarios.component.css']
+    selector: 'app-usuarios',
+    templateUrl: './usuarios.component.html',
+    styleUrls: ['./usuarios.component.css'],
+    standalone: true
 })
 
 export class UsuariosComponent implements OnInit {

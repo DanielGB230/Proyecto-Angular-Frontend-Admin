@@ -1,10 +1,13 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-roles',
-  templateUrl: './roles.component.html',
-  styleUrls: ['./roles.component.css']
+    selector: 'app-roles',
+    templateUrl: './roles.component.html',
+    styleUrls: ['./roles.component.css'],
+    standalone: true,
+    imports: [FormsModule]
 })
 
 export class RolesComponent implements OnInit {

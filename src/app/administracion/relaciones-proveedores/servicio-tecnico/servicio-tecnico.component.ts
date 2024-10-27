@@ -1,10 +1,13 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-servicio-tecnico',
-  templateUrl: './servicio-tecnico.component.html',
-  styleUrls: ['./servicio-tecnico.component.css']
+    selector: 'app-servicio-tecnico',
+    templateUrl: './servicio-tecnico.component.html',
+    styleUrls: ['./servicio-tecnico.component.css'],
+    standalone: true,
+    imports: [FormsModule]
 })
 
 export class ServicioTecnicoComponent implements OnInit {

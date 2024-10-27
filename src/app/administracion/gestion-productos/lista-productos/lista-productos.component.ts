@@ -1,13 +1,16 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductBody, Producto } from 'src/app/shared/models/producto';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { NgFor, CurrencyPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-lista-productos',
-  templateUrl: './lista-productos.component.html',
-  styleUrls: ['./lista-productos.component.css']
+    selector: 'app-lista-productos',
+    templateUrl: './lista-productos.component.html',
+    styleUrls: ['./lista-productos.component.css'],
+    standalone: true,
+    imports: [NgFor, FormsModule, CurrencyPipe]
 })
 export class ListaProductosComponent implements OnInit {
   cargaDatos: 'none' | 'loading' | 'done' | 'error' = "none";

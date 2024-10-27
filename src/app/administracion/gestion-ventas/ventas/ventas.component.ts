@@ -1,10 +1,13 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgIf, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-ventas',
-  templateUrl: './ventas.component.html',
-  styleUrls: ['./ventas.component.css']
+    selector: 'app-ventas',
+    templateUrl: './ventas.component.html',
+    styleUrls: ['./ventas.component.css'],
+    standalone: true,
+    imports: [NgIf, NgClass]
 })
 
 export class VentasComponent implements OnInit {

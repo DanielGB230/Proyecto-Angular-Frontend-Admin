@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterLinkActive, RouterLink } from '@angular/router';
 import { StateEnum } from 'src/app/shared/models/state.enum';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 import Swal from 'sweetalert2';
+import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, NgClass, RouterLinkActive, RouterLink]
 })
 export class LoginComponent implements OnInit {
   stateEnum = StateEnum;

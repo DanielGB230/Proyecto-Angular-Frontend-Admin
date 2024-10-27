@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StateEnum } from 'src/app/shared/models/state.enum';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 import Swal from 'sweetalert2';
+import { RouterLinkActive, RouterLink } from '@angular/router';
+import { NgClass, NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.css'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, NgClass, NgIf, NgFor, RouterLinkActive, RouterLink]
 })
 export class RegisterComponent implements OnInit {
   stateEnum = StateEnum;

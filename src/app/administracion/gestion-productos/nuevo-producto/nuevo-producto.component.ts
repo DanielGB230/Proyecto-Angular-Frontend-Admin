@@ -1,13 +1,16 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductBody, Producto } from 'src/app/shared/models/producto';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-nuevo-producto',
-  templateUrl: './nuevo-producto.component.html',
-  styleUrls: ['./nuevo-producto.component.css']
+    selector: 'app-nuevo-producto',
+    templateUrl: './nuevo-producto.component.html',
+    styleUrls: ['./nuevo-producto.component.css'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, NgIf]
 })
 export class NuevoProductoComponent implements OnInit {
   cargaDatos: 'none' | 'loading' | 'done' | 'error' = "none";

@@ -1,10 +1,14 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-nueva-marca',
-  templateUrl: './nueva-marca.component.html',
-  styleUrls: ['./nueva-marca.component.css']
+    selector: 'app-nueva-marca',
+    templateUrl: './nueva-marca.component.html',
+    styleUrls: ['./nueva-marca.component.css'],
+    standalone: true,
+    imports: [FormsModule, NgClass]
 })
 export class NuevaMarcaComponent implements OnInit {
   constructor(private router: Router) { }

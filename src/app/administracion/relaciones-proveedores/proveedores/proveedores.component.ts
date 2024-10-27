@@ -1,10 +1,13 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-proveedores',
-  templateUrl: './proveedores.component.html',
-  styleUrls: ['./proveedores.component.css']
+    selector: 'app-proveedores',
+    templateUrl: './proveedores.component.html',
+    styleUrls: ['./proveedores.component.css'],
+    standalone: true,
+    imports: [FormsModule]
 })
 
 export class ProveedoresComponent implements OnInit {

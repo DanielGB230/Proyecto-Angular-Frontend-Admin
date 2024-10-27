@@ -1,13 +1,16 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Brand, BrandBody } from 'src/app/shared/models/brand';
 import { BrandService } from 'src/app/shared/services/brand.service';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-marcas',
-  templateUrl: './marcas.component.html',
-  styleUrls: ['./marcas.component.css']
+    selector: 'app-marcas',
+    templateUrl: './marcas.component.html',
+    styleUrls: ['./marcas.component.css'],
+    standalone: true,
+    imports: [NgFor, FormsModule]
 })
 export class MarcasComponent implements OnInit {
   cargaDatos: 'none' | 'loading' | 'done' | 'error' = "none";

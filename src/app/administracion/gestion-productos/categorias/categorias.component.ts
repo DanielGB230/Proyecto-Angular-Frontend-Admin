@@ -1,13 +1,16 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Category, CategoryBody } from 'src/app/shared/models/category';
 import { CategoryService } from 'src/app/shared/services/category.service';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-categorias',
-  templateUrl: './categorias.component.html',
-  styleUrls: ['./categorias.component.css']
+    selector: 'app-categorias',
+    templateUrl: './categorias.component.html',
+    styleUrls: ['./categorias.component.css'],
+    standalone: true,
+    imports: [NgFor, FormsModule]
 })
 export class CategoriasComponent implements OnInit {
 

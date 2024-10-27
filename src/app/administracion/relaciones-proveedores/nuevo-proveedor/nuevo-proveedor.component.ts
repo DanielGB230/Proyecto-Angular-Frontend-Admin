@@ -1,10 +1,13 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-nuevo-proveedor',
-  templateUrl: './nuevo-proveedor.component.html',
-  styleUrls: ['./nuevo-proveedor.component.css']
+    selector: 'app-nuevo-proveedor',
+    templateUrl: './nuevo-proveedor.component.html',
+    styleUrls: ['./nuevo-proveedor.component.css'],
+    standalone: true,
+    imports: [FormsModule]
 })
 export class NuevoProveedorComponent implements OnInit {
   constructor(private router: Router) { }

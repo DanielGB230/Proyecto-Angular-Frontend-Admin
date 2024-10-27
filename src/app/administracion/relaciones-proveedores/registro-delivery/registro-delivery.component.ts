@@ -1,10 +1,13 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-registro-delivery',
-  templateUrl: './registro-delivery.component.html',
-  styleUrls: ['./registro-delivery.component.css']
+    selector: 'app-registro-delivery',
+    templateUrl: './registro-delivery.component.html',
+    styleUrls: ['./registro-delivery.component.css'],
+    standalone: true,
+    imports: [FormsModule]
 })
 
 export class RegistroDeliveryComponent implements OnInit {
