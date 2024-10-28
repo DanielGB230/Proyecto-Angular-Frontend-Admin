@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Innova:build:production"
+              "buildTarget": "Innova:build:production"
             },
             "development": {
-              "browserTarget": "Innova:build:development"
+              "buildTarget": "Innova:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Innova:build"
+            "buildTarget": "Innova:build"
           }
         },
         "test": {
