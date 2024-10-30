@@ -1,17 +1,23 @@
+import { CommonModule, NgIf } from '@angular/common';
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Profile } from 'src/app/shared/models/profile';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
-import { NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-inicio',
-    templateUrl: './inicio.component.html',
-    styleUrls: ['./inicio.component.css'],
-    standalone: true,
-    imports: [NgIf]
+  selector: 'app-inicio',
+  templateUrl: './inicio.component.html',
+  styleUrls: ['./inicio.component.css'],
+  standalone: true,
+  imports: [NgIf, RouterOutlet, CommonModule]
 })
 export class InicioComponent implements OnInit, AfterViewInit {
+  menuOption: string = ''; // Inicializa con un valor vacío
+
+  onOption(option: string) {
+    this.menuOption = option; // Actualiza la opción seleccionada
+  }
+
   dropdownOpen = false;
   profile?: Profile;
   constructor(

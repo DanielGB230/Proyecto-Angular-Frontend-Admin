@@ -1,11 +1,13 @@
+import { NgIf, NgClass } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-usuarios',
-    templateUrl: './usuarios.component.html',
-    styleUrls: ['./usuarios.component.css'],
-    standalone: true
+  selector: 'app-usuarios',
+  templateUrl: './usuarios.component.html',
+  styleUrls: ['./usuarios.component.css'],
+  standalone: true,
+  imports: [NgIf, NgClass]
 })
 
 export class UsuariosComponent implements OnInit {
@@ -16,13 +18,11 @@ export class UsuariosComponent implements OnInit {
   }
 
   sidebar!: HTMLElement | null;
-  menuBtn!: HTMLElement | null;
   closeBtn!: HTMLElement | null;
   overlay!: HTMLElement | null;
 
   ngOnInit(): void {
     this.sidebar = document.getElementById("sidebar");
-    this.menuBtn = document.getElementById("menu-btn");
     this.closeBtn = document.getElementById("close-btn");
     this.overlay = document.getElementById("overlay");
 
@@ -30,10 +30,6 @@ export class UsuariosComponent implements OnInit {
   }
 
   initializeEventListeners(): void {
-    if (this.menuBtn) {
-      this.menuBtn.addEventListener("click", this.openSidebar.bind(this));
-    }
-
     if (this.closeBtn) {
       this.closeBtn.addEventListener("click", this.closeSidebar.bind(this));
     }
@@ -77,6 +73,12 @@ export class UsuariosComponent implements OnInit {
         this.sidebar.style.overflowX = "auto";
       }
     }
+  }
+  /* Este es el unico codigo para desplegar el filtro de busqueda de ventas */
+  isDropdownOpen: boolean = false;
+
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
   }
 }
 

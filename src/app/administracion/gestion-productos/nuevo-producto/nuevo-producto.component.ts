@@ -1,16 +1,16 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductBody, Producto } from 'src/app/shared/models/producto';
 import { ProductService } from 'src/app/shared/services/product.service';
-import { NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-nuevo-producto',
-    templateUrl: './nuevo-producto.component.html',
-    styleUrls: ['./nuevo-producto.component.css'],
-    standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, NgIf]
+  selector: 'app-nuevo-producto',
+  templateUrl: './nuevo-producto.component.html',
+  styleUrls: ['./nuevo-producto.component.css'],
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, NgIf]
 })
 export class NuevoProductoComponent implements OnInit {
   cargaDatos: 'none' | 'loading' | 'done' | 'error' = "none";
@@ -18,6 +18,7 @@ export class NuevoProductoComponent implements OnInit {
   products: Producto[] = [];
   showFormProduct: 'none' | 'edit' | 'add' = 'none';
   formProduct: FormGroup;
+
   constructor(
     private productService: ProductService,
     private fb: FormBuilder,
@@ -35,24 +36,18 @@ export class NuevoProductoComponent implements OnInit {
       Garantia: [null, [Validators.required, Validators.min(0)]]
     });
   }
+
   ngOnInit(): void {
     this.listAll();
-
-    this.sidebar = document.getElementById("sidebar");
-    this.menuBtn = document.getElementById("menu-btn");
-    this.closeBtn = document.getElementById("close-btn");
-    this.overlay = document.getElementById("overlay");
-
-    this.initializeEventListeners(); // Configurar eventos para la barra lateral
-    this.validateForm(); // Llamar a la función de validación del formulario al iniciar
+    this.validateForm();
   }
-  
+
   // Implementando APIS
   listAll() {
     this.cargaDatos = 'loading';
     this.productService.list().subscribe({
       next: (data) => {
-        this.cargaDatos = 'done',
+        this.cargaDatos = 'done';
         this.products = data;
       },
       error: (_) => {
@@ -60,6 +55,7 @@ export class NuevoProductoComponent implements OnInit {
       }
     });
   }
+
   addProduct() {
     this.showFormProduct = "add";
     this.createProductState = 'none';
@@ -68,26 +64,25 @@ export class NuevoProductoComponent implements OnInit {
   removeProduct(producto: Producto) {
     producto.remove = true;
   }
+
   confirmDelete(productId: number) {
     this.productService.remove(productId).subscribe({
-      next: (res) => {
-        // this.listAll();
+      next: () => {
         this.products = this.products.filter(b => b.id != productId);
       },
-      error: (err) => {}
+      error: (err) => { }
     });
   }
+
   cancelDelete(product: Producto) {
     product.remove = false;
   }
 
-  createProduct(){
-    console.log(this.formProduct);
+  createProduct() {
     this.createProductState = 'loading';
     this.productService.create(this.formProduct.value as ProductBody).subscribe({
       next: (data) => {
         this.createProductState = 'done';
-        // this.listAll();
         this.products.push(data);
       },
       error: (err) => {
@@ -96,67 +91,8 @@ export class NuevoProductoComponent implements OnInit {
     });
   }
 
-  
-  
-
   navigateTo(route: string) {
     this.router.navigate([route]);
-  }
-
-  /* Propiedades de la barra lateral ******************************** */
-  sidebar!: HTMLElement | null;
-  menuBtn!: HTMLElement | null;
-  closeBtn!: HTMLElement | null;
-  overlay!: HTMLElement | null;
-  isSidebarActive: boolean = false;
-
-  
-
-  initializeEventListeners(): void {
-    if (this.menuBtn) {
-      this.menuBtn.addEventListener("click", this.openSidebar.bind(this));
-    }
-
-    if (this.closeBtn) {
-      this.closeBtn.addEventListener("click", this.closeSidebar.bind(this));
-    }
-
-    if (this.overlay) {
-      this.overlay.addEventListener("click", this.closeSidebar.bind(this));
-    }
-
-    document.addEventListener("click", (event) => {
-      if (this.sidebar && !this.sidebar.contains(event.target as Node) && !this.menuBtn?.contains(event.target as Node)) {
-        this.closeSidebar();
-      }
-    });
-  }
-
-  openSidebar(): void {
-    if (this.sidebar && this.overlay) {
-      this.sidebar.classList.add("show");
-      this.overlay.style.display = "block";
-      document.body.style.overflow = 'hidden';
-      this.isSidebarActive = true;
-    }
-  }
-
-  closeSidebar(): void {
-    if (this.sidebar && this.overlay) {
-      this.sidebar.classList.remove("show");
-      this.overlay.style.display = "none";
-      document.body.style.overflow = '';
-      this.isSidebarActive = false;
-    }
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    if (this.sidebar && this.overlay) {
-      if (window.innerWidth >= 768) {
-        this.closeSidebar();
-      }
-    }
   }
 
   /* Validación de los campos ******************************** */
@@ -181,7 +117,6 @@ export class NuevoProductoComponent implements OnInit {
     // Manejo del cambio en el input de archivos
     fileInput.addEventListener('change', (event: Event) => {
       const files = (event.target as HTMLInputElement).files;
-      console.log('Archivos seleccionados:', files); // Log para verificar archivos seleccionados
       imagePreview.innerHTML = ''; // Limpiar vista previa anterior
 
       if (files) {
@@ -189,8 +124,6 @@ export class NuevoProductoComponent implements OnInit {
           const reader = new FileReader();
 
           reader.onload = (e: ProgressEvent<FileReader>) => {
-            console.log('Cargando archivo:', e.target?.result); // Log para verificar el archivo cargado
-
             const imageContainer = document.createElement('div');
             imageContainer.className = 'relative inline-block m-2';
 
@@ -201,18 +134,19 @@ export class NuevoProductoComponent implements OnInit {
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'X';
             deleteButton.className = 'absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs';
-            deleteButton.onclick = () => imageContainer.remove(); // Eliminar la imagen al hacer clic
+            deleteButton.onclick = () => imageContainer.remove();
 
             imageContainer.append(img, deleteButton);
-            imagePreview.appendChild(imageContainer); // Añadir el contenedor de imagen a la vista previa
+            imagePreview.appendChild(imageContainer);
           };
 
-          reader.readAsDataURL(file); // Leer el archivo como URL de datos
+          reader.readAsDataURL(file);
         });
       }
     });
   }
-  /* modal para confirmacion de descarte y regresar*/
+
+  /* Modal para confirmación de descarte y regresar */
   openModal(): void {
     const modal = document.getElementById('categorias');
     if (modal) {
@@ -221,7 +155,6 @@ export class NuevoProductoComponent implements OnInit {
     }
   }
 
-  // Método para cerrar el modal
   closeModal(): void {
     const modal = document.getElementById('categorias');
     if (modal) {
@@ -230,11 +163,8 @@ export class NuevoProductoComponent implements OnInit {
     }
   }
 
-  // Confirmar acción y redirigir
   confirmDiscard(): void {
-    this.closeModal();  // Cierra el modal
-
-    // Lógica para redirigir a la ruta especificada
+    this.closeModal();
     this.router.navigate(['/administracion/gestion/producto/lista']);
   }
 }

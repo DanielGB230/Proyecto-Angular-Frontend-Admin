@@ -7,11 +7,11 @@ import Swal from 'sweetalert2';
 import { NgClass } from '@angular/common';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css'],
-    standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, NgClass, RouterLinkActive, RouterLink]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, NgClass, RouterLinkActive, RouterLink]
 })
 export class LoginComponent implements OnInit {
   stateEnum = StateEnum;
@@ -28,13 +28,13 @@ export class LoginComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    
+
   }
 
   login() {
     this.loginState = StateEnum.loading;
     this.authService.login(this.loginForm.value).subscribe({
-      next: (data)=> {
+      next: (data) => {
         this.loginState = StateEnum.done;
         Swal.fire({
           title: 'Inicio de sesión correcta!',
@@ -57,6 +57,9 @@ export class LoginComponent implements OnInit {
         });
       }
     });
+  }
+  irALogin() {
+    this.router.navigate([{ outlets: { auth: ['auth/login'] } }]);
   }
 }
 

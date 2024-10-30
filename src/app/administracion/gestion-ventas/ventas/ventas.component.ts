@@ -1,13 +1,13 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgIf, NgClass } from '@angular/common';
 
 @Component({
-    selector: 'app-ventas',
-    templateUrl: './ventas.component.html',
-    styleUrls: ['./ventas.component.css'],
-    standalone: true,
-    imports: [NgIf, NgClass]
+  selector: 'app-ventas',
+  templateUrl: './ventas.component.html',
+  styleUrls: ['./ventas.component.css'],
+  standalone: true,
+  imports: [NgIf, NgClass]
 })
 
 export class VentasComponent implements OnInit {
@@ -26,69 +26,11 @@ export class VentasComponent implements OnInit {
 
   ngOnInit(): void {
     this.sidebar = document.getElementById("sidebar");
-    this.menuBtn = document.getElementById("menu-btn");
     this.closeBtn = document.getElementById("close-btn");
     this.overlay = document.getElementById("overlay");
 
-    // Inicializa los eventos de la barra lateral
-    this.initializeEventListeners();
-
     // Inicializa los eventos del modal de confirmación
     this.initializeConfirmButtons();
-  }
-
-  // initializeEventListeners: Asigna eventos a los botones de la barra lateral.
-  initializeEventListeners(): void {
-    if (this.menuBtn) {
-      this.menuBtn.addEventListener("click", this.openSidebar.bind(this));
-    }
-
-    if (this.closeBtn) {
-      this.closeBtn.addEventListener("click", this.closeSidebar.bind(this));
-    }
-
-    if (this.overlay) {
-      this.overlay.addEventListener("click", this.closeSidebar.bind(this));
-    }
-  }
-
-  // openSidebar: Abre la barra lateral y muestra el overlay.
-  openSidebar(): void {
-    if (this.sidebar && this.overlay) {
-      this.sidebar.classList.add("show");
-      this.overlay.style.display = "block";
-
-      if (window.innerWidth < 768) {
-        this.sidebar.style.overflowY = "auto";
-        this.sidebar.style.overflowX = "auto";
-      }
-    }
-  }
-
-  // closeSidebar: Cierra la barra lateral y oculta el overlay.
-  closeSidebar(): void {
-    if (this.sidebar && this.overlay) {
-      this.sidebar.classList.remove("show");
-      this.overlay.style.display = "none";
-      this.sidebar.style.overflowY = "";
-      this.sidebar.style.overflowX = "";
-    }
-  }
-
-  // onResize: Detecta el redimensionamiento de la ventana para ajustar la barra lateral.
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    if (this.sidebar && this.overlay) {
-      if (window.innerWidth >= 768) {
-        this.sidebar.classList.remove("show");
-        this.overlay.style.display = "none";
-        this.sidebar.style.overflowY = "";
-        this.sidebar.style.overflowX = "";
-      } else {
-        this.sidebar.style.overflowY = "auto";
-        this.sidebar.style.overflowX = "auto";
-      }
-    }
   }
 
   // openConfirmClearModal: Muestra el modal de confirmación.

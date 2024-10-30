@@ -1,6 +1,6 @@
 <body class="min-h-screen flex items-center justify-center bg-cover bg-center"
   style="background-image: url('https://img.freepik.com/fotos-premium/ilustracion-montana-fondo-azul_997534-1349.jpg');">
-  
+
   <div class="bg-white p-8 rounded-lg shadow-md w-96 relative">
     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white px-4 py-2 rounded">
       INGRESO
@@ -9,11 +9,10 @@
     <p class="text-gray-600 text-sm mb-6 text-center">
       Utilice el formulario para iniciar sesión
     </p>
-    
+
     <form [formGroup]="loginForm" (submit)="login()">
       <div class="relative flex flex-row items-center mb-7">
-        <input formControlName="email" id="email" type="email" required
-          class="peer text-black pl-2 h-[40px] min-h-[40px] pr-[40px] leading-normal appearance-none resize-none box-border text-base w-full block text-left
+        <input formControlName="email" id="email" type="email" required class="peer text-black pl-2 h-[40px] min-h-[40px] pr-[40px] leading-normal appearance-none resize-none box-border text-base w-full block text-left
                  border border-black rounded-[10px] m-0 p-0 outline-0 
                  focus:outline-none focus:border-teal-500 focus:ring-4 focus:ring-teal-500/30"
           [ngClass]="{ 'border-red-500': loginForm.get('email')?.invalid && loginForm.get('email')?.touched }" />
@@ -24,8 +23,7 @@
       </div>
 
       <div class="relative flex flex-row items-center mb-4">
-        <input formControlName="password" id="password" type="password" required
-          class="peer text-black pl-2 h-[40px] min-h-[40px] pr-[40px] leading-normal appearance-none resize-none box-border text-base w-full block text-left
+        <input formControlName="password" id="password" type="password" required class="peer text-black pl-2 h-[40px] min-h-[40px] pr-[40px] leading-normal appearance-none resize-none box-border text-base w-full block text-left
                  border border-black rounded-[10px] m-0 p-0 outline-0 
                  focus:outline-none focus:border-teal-500 focus:ring-4 focus:ring-teal-500/30"
           [ngClass]="{ 'border-red-500': loginForm.get('password')?.invalid && loginForm.get('password')?.touched }" />

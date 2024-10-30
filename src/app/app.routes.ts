@@ -21,11 +21,7 @@ import { UsuariosComponent } from "./administracion/gestion-usuarios/usuarios/us
 import { DashboardComponent } from "./administracion/gestion-ventas/dashboard/dashboard.component";
 import { InicioComponent } from "./administracion/gestion-ventas/inicio/inicio.component";
 import { VentasComponent } from "./administracion/gestion-ventas/ventas/ventas.component";
-import { DeliveryComponent } from "./administracion/relaciones-proveedores/delivery/delivery.component";
-import { NuevoProveedorComponent } from "./administracion/relaciones-proveedores/nuevo-proveedor/nuevo-proveedor.component";
 import { NuevoServicioComponent } from "./administracion/relaciones-proveedores/nuevo-servicio/nuevo-servicio.component";
-import { ProveedoresComponent } from "./administracion/relaciones-proveedores/proveedores/proveedores.component";
-import { RegistroDeliveryComponent } from "./administracion/relaciones-proveedores/registro-delivery/registro-delivery.component";
 import { ServicioTecnicoComponent } from "./administracion/relaciones-proveedores/servicio-tecnico/servicio-tecnico.component";
 
 export const routes: Routes = [
@@ -41,8 +37,6 @@ export const routes: Routes = [
     { path: 'administracion/gestion/usuarios/nuevo', component: NuevoUsuarioComponent },
     { path: 'administracion/gestion/ventas/dashboard', component: DashboardComponent },
     { path: 'administracion/gestion/ventas', component: VentasComponent },
-    { path: 'administracion/gestion/proveedores', component: ProveedoresComponent },
-    { path: 'administracion/gestion/proveedores/nuevo', component: NuevoProveedorComponent },
     { path: 'administracion/gestion/servicioTecnico', component: ServicioTecnicoComponent },
     { path: 'administracion/gestion/servicioTecnico/nuevo', component: NuevoServicioComponent },
     { path: 'administracion/gestion/usuarios/empleados', component: EmpleadosComponent },
@@ -55,7 +49,6 @@ export const routes: Routes = [
     { path: 'administracion/gestion/usuarios/puestos/nuevo', component: NuevoPuestoComponent },
     { path: 'administracion/gestion/usuarios/cliente/nuevo', component: NuevoClienteComponent },
     { path: 'administracion/gestion/usuarios/cliente', component: ClientesComponent },
-    { path: 'administracion/gestion/provedores/delivery', component: DeliveryComponent },
-    { path: 'administracion/gestion/provedores/delivery/registro', component: RegistroDeliveryComponent },
     { path: '**', redirectTo: 'auth/login', pathMatch: 'full' },
 ];
+
