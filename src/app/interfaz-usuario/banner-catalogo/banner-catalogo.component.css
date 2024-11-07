@@ -1,0 +1,7 @@
+.hidden {
+  display: none; /* Oculta los elementos */
+}
+
+[data-carousel-item] {
+  transition: opacity 0.5s ease-in-out; /* Transición suave */
+}

@@ -12,8 +12,6 @@ import { Router } from '@angular/router';
 })
 export class VenderProductosComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
   // Propiedades para el modal de edición
   modalEdit!: HTMLElement | null;
   btnCloseEdit!: HTMLElement | null;
@@ -31,10 +29,6 @@ export class VenderProductosComponent implements OnInit {
 
     // Inicializa los eventos del modal de edición
     this.initializeEventListeners();
-  }
-
-  navigateTo(route: string) {
-    this.router.navigate([route]);
   }
 
   // initializeEventListeners: Asigna eventos a los botones del modal de edición.
@@ -118,5 +112,21 @@ export class VenderProductosComponent implements OnInit {
   validateForm(formId: string): boolean {
     alert('Formulario enviado con éxito!');
     return true;
+  }
+
+  constructor(private router: Router) { }
+  // Componente visible por defecto
+  visibleComponent: string | null = null;
+  // Método navigateTo unificado para manejar tanto rutas como componentes
+  navigateTo(routeOrComponent: string): void {
+    if (routeOrComponent.startsWith('/')) {
+      // Si es una ruta, navega usando el Router y resetea el componente visible
+      this.router.navigate([routeOrComponent]).then(() => {
+        this.visibleComponent = null; // Cierra el componente actual
+      });
+    } else {
+      // Si no es una ruta, cambia de componente
+      this.visibleComponent = routeOrComponent;
+    }
   }
 }

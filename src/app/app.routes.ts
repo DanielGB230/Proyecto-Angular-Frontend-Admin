@@ -1,4 +1,4 @@
-import { Routes } from "@angular/router";
+import { Routes } from '@angular/router';
 import { LoginComponent } from "./administracion/auth/login/login.component";
 import { RegisterComponent } from "./administracion/auth/register/register.component";
 import { CategoriasComponent } from "./administracion/gestion-productos/categorias/categorias.component";
@@ -21,12 +21,25 @@ import { UsuariosComponent } from "./administracion/gestion-usuarios/usuarios/us
 import { DashboardComponent } from "./administracion/gestion-ventas/dashboard/dashboard.component";
 import { InicioComponent } from "./administracion/gestion-ventas/inicio/inicio.component";
 import { VentasComponent } from "./administracion/gestion-ventas/ventas/ventas.component";
+import { HomeAdminComponent } from "./administracion/home-admin/home-admin.component";
 import { NuevoServicioComponent } from "./administracion/relaciones-proveedores/nuevo-servicio/nuevo-servicio.component";
 import { ServicioTecnicoComponent } from "./administracion/relaciones-proveedores/servicio-tecnico/servicio-tecnico.component";
+/* ***** */
+import { NotFoundComponent } from './404/not-found/not-found.component';
+import { BannerCatalogoComponent } from './interfaz-usuario/banner-catalogo/banner-catalogo.component';
+import { DetalleSupportComponent } from './interfaz-usuario/detalle-support/detalle-support.component';
+import { EditarPerfilComponent } from './interfaz-usuario/editar-perfil/editar-perfil.component';
+import { HomeCatalogoComponent } from './interfaz-usuario/home-catalogo/home-catalogo.component';
+import { NavCatalogoComponent } from './interfaz-usuario/nav-catalogo/nav-catalogo.component';
+import { PerfilUsuarioComponent } from './interfaz-usuario/perfil-usuario/perfil-usuario.component';
+import { ProductosCatalogoComponent } from './interfaz-usuario/productos-catalogo/productos-catalogo.component';
+import { SupportPagoComponent } from './interfaz-usuario/support-pago/support-pago.component';
+import { SupportComponent } from './interfaz-usuario/support/support.component';
 
 export const routes: Routes = [
     { path: 'auth/login', component: LoginComponent },
     { path: 'auth/register', component: RegisterComponent },
+    { path: 'home/admin', component: HomeAdminComponent },
     { path: 'administracion/inicio', component: InicioComponent },
     { path: 'administracion/gestion/producto/nuevo', component: NuevoProductoComponent },
     { path: 'administracion/gestion/producto/lista', component: ListaProductosComponent },
@@ -49,6 +62,18 @@ export const routes: Routes = [
     { path: 'administracion/gestion/usuarios/puestos/nuevo', component: NuevoPuestoComponent },
     { path: 'administracion/gestion/usuarios/cliente/nuevo', component: NuevoClienteComponent },
     { path: 'administracion/gestion/usuarios/cliente', component: ClientesComponent },
-    { path: '**', redirectTo: 'administracion/inicio', pathMatch: 'full' },
-];
 
+    /* { path: '**', redirectTo: 'home/admin', pathMatch: 'full' }, */
+    { path: 'home/catalogo', component: HomeCatalogoComponent },
+    { path: 'catalogo', component: NavCatalogoComponent },
+    { path: 'banner', component: BannerCatalogoComponent },
+    { path: 'productos', component: ProductosCatalogoComponent },
+    { path: 'perfil/usuario', component: PerfilUsuarioComponent },
+    { path: 'editar/perfil', component: EditarPerfilComponent },
+    { path: 'servicio/tecnico', component: SupportComponent },
+    { path: 'not/found/404', component: NotFoundComponent },
+    { path: 'detalle/support', component: DetalleSupportComponent },
+    { path: 'pago/servicio', component: SupportPagoComponent },
+    { path: '**', redirectTo: 'not/found/404', pathMatch: 'full' },
+
+];

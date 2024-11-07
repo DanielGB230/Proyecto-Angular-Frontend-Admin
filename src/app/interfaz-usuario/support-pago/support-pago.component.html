@@ -1,0 +1,84 @@
+<div class="max-w-lg mx-auto p-6 bg-gray-200 rounded-lg shadow-lg mt-10 space-y-6">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Procesar Pago</h2>
+    <div class="p-4 bg-white rounded-lg">
+        <h3 class="text-lg font-medium text-gray-700">Detalles del Servicio</h3>
+        <div class="mt-3 space-y-2 text-gray-600 text-sm">
+            <div class="flex justify-between">
+                <span>Servicio:</span>
+                <span>Mantenimiento PC</span>
+            </div>
+            <div class="flex justify-between">
+                <span>ID Servicio:</span>
+                <span>#SR-2024-002</span>
+            </div>
+            <div class="flex justify-between">
+                <span>Fecha:</span>
+                <span>05/11/2024</span>
+            </div>
+            <div class="flex justify-between">
+                <span>Técnico:</span>
+                <span>Ana Martínez</span>
+            </div>
+            <div class="flex justify-between font-semibold">
+                <span>Total:</span>
+                <span>S/ 150.00</span>
+            </div>
+        </div>
+    </div>
+    <div class="p-4 bg-white rounded-lg">
+        <h3 class="text-lg font-medium text-gray-700">Método de Pago</h3>
+        <div class="mt-3 space-y-4">
+            <div class="flex items-center">
+                <input type="radio" id="credit-card" name="payment-method"
+                    class="w-4 h-4 text-blue-600 focus:ring-blue-500">
+                <label for="credit-card" class="ml-3 text-gray-700">Tarjeta de Crédito/Débito</label>
+            </div>
+            <div class="space-y-2 ml-7">
+                <input type="text" placeholder="Número de Tarjeta"
+                    class="w-full p-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" />
+                <div class="flex space-x-2">
+                    <input type="text" placeholder="MM/AA"
+                        class="w-1/2 p-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" />
+                    <input type="text" placeholder="CVV"
+                        class="w-1/2 p-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" />
+                </div>
+            </div>
+
+            <div class="flex items-center mt-4">
+                <input type="radio" id="digital-wallet" name="payment-method"
+                    class="w-4 h-4 text-blue-600 focus:ring-blue-500">
+                <label for="digital-wallet" class="ml-3 text-gray-700">Billetera Digital (Yape, BCP)</label>
+            </div>
+            <div class="space-y-2 ml-7">
+                <input type="text" placeholder="Número de teléfono"
+                    class="w-full p-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" />
+            </div>
+        </div>
+    </div>
+    <div class="p-4 bg-white rounded-lg">
+        <h3 class="text-lg font-medium text-gray-700">Verificación de Seguridad</h3>
+        <p class="text-sm text-gray-600 mt-2">Se enviará un código de verificación a tu número registrado para mayor
+            seguridad.</p>
+        <div class="mt-3">
+            <input type="text" placeholder="Ingrese el código de verificación"
+                class="w-full p-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" />
+            <button class="mt-2 text-blue-600 text-sm hover:underline">Reenviar código</button>
+        </div>
+    </div>
+    <div class="p-4 bg-white rounded-lg">
+        <h3 class="text-lg font-medium text-gray-700">Resumen de Pago</h3>
+        <p class="text-sm text-gray-600 mt-2">Confirma los detalles antes de procesar el pago:</p>
+        <ul class="mt-3 text-gray-600 text-sm space-y-2">
+            <li>- Servicio: Mantenimiento PC</li>
+            <li>- Técnico: Ana Martínez</li>
+            <li>- Fecha del Servicio: 05/11/2024</li>
+            <li>- Total a Pagar: S/ 150.00</li>
+        </ul>
+    </div>
+    <div class="text-right">
+        <button
+            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+            Confirmar Pago
+        </button>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+/* Estilos para la barra lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Inicialmente oculta desde el lado derecho */
+  height: 100%;
+  width: 250px; /* Ancho de la barra lateral */
+  background-color: white; /* Color de fondo */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  transition: right 0.3s ease; /* Transición suave al mostrar/ocultar */
+  z-index: 1001; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+/* Mostrar la barra lateral cuando está activa */
+.sidebar.active {
+  right: 0;
+}
+
+/* Estilos para el overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Color del overlay */
+  z-index: 1000; /* Debajo de la barra lateral pero encima del contenido */
+  display: none; /* Oculto por defecto */
+}
+
+.overlay.active {
+  display: block; /* Mostrar el overlay cuando la barra lateral está activa */
+}
+
+/* Estilos para ocultar los botones de la barra de navegación */
+.nav-buttons {
+  transition: opacity 0.3s ease;
+}
+
+.nav-buttons.hidden {
+  opacity: 0;
+  pointer-events: none; /* Evita la interacción con los botones cuando están ocultos */
+}

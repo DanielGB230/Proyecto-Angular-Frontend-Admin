@@ -1,0 +1,14 @@
+.bg-custom {
+  background-image: url("https://iili.io/2zwgCFf.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+}
+
+@media (max-width: 768px) {
+  .bg-custom {
+    background-size: auto 100%;
+    min-height: 300px;
+  }
+}

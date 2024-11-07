@@ -1,0 +1,76 @@
+<div class="bg-gray-200 max-w-7xl mx-auto p-6">
+    <!-- Header con filtros -->
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Mis Servicios Técnicos</h2>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+            <select class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                <option>Todos los estados</option>
+                <option>En proceso</option>
+                <option>Completado</option>
+                <option>Pendiente</option>
+
+            </select>
+            <input type="date" class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+        </div>
+    </div>
+    <!-- Cards de servicios -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Servicio 1 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 relative">
+            <div class="p-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-sm text-gray-500">#SR-2024-002</span>
+                        <h3 class="text-lg font-semibold text-gray-800 mt-1">Mantenimiento PC</h3>
+                    </div>
+                    <span class="px-3 py-1 text-sm font-medium bg-green-100 text-green-800 rounded-full">
+                        Completado
+                    </span>
+                </div>
+
+                <div class="mt-4 space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">Fecha solicitada:</span>
+                        <span class="text-gray-800">05/11/2024</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">Técnico:</span>
+                        <span class="text-gray-800">Ana Martínez</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">Producto:</span>
+                        <span class="text-gray-800">PC Escritorio Dell</span>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <div class="h-2 bg-gray-300 rounded-full">
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <!-- Descripción del servicio -->
+                    <p class="text-gray-700 text-sm">
+                        La laptop no enciende y hace ruidos extraños al presionar el botón de encendido. También se
+                        calienta más de lo normal
+                        cuando está conectada
+                    </p>
+                </div>
+            </div>
+            <div class="border-t px-6 py-3 bg-gray-50 rounded-b-lg relative">
+                <div class="flex justify-between items-start">
+                    <div class="flex items-center space-x-2 text-sm text-gray-600">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Completado: 06/11/2024</span>
+                    </div>
+                    <button (click)="navigateTo('/pago/servicio')" class="px-3 py-1 text-sm font-medium bg-blue-500 text-white rounded-full">
+                        Pagar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

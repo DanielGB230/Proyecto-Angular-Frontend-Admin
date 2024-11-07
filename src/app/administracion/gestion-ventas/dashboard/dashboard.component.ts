@@ -5,13 +5,11 @@ import { NgFor, NgClass } from '@angular/common';
 interface Contact {
   name: string;
   email: string;
-  // Agrega más propiedades según tu necesidad
 }
 
 interface Bestseller {
   productName: string;
   sales: number;
-  // Agrega más propiedades según tu necesidad
 }
 
 @Component({

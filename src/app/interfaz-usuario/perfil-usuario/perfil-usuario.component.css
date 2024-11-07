@@ -1,0 +1,33 @@
+/* Barra lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -350px; /* Inicialmente oculta desde el lado izquierdo */
+  height: 100%;
+  width: 300px; /* Aumentamos el ancho de la barra lateral */
+  background-color: black;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  transition: left 0.3s ease; /* Transición suave al mostrar/ocultar */
+  z-index: 1001;
+}
+
+/* Mostrar la barra lateral cuando está activa */
+.sidebar.active {
+  left: 0; /* Muestra la barra lateral al agregar la clase 'active' */
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  z-index: 1000; /* Está debajo de la barra lateral */
+  display: none; /* Oculto por defecto */
+}
+
+.overlay.active {
+  display: block; /* Muestra el overlay cuando la barra lateral está activa */
+}

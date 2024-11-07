@@ -1,0 +1,174 @@
+<div class="bg-gray-200">
+    <nav class="bg-black px-4 py-3 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <svg class="h-8 w-8 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+                <span class="text-white text-xl font-bold tracking-tight">Servicio Técnico Innova</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button (click)="navigateTo('home/catalogo')" class="text-gray-300 hover:text-white transition duration-150 ease-in-out">Inicio</button>
+                <button
+                    class="bg-green-500 hover:bg-green-600 text-white flex items-center px-4 py-2 rounded-full transition duration-150 ease-in-out">
+                    <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    WhatsApp
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Encabezado principal -->
+    <header class="bg-custom flex text-white py-36 relative">
+        <div class="absolute top-0 left-0 p-4">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">Reparación y Servicio Técnico a Domicilio</h1>
+            <p class="text-base md:text-lg lg:text-xl">Somos una empresa especializada en brindar servicio técnico. </p>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full flex justify-center space-x-4 p-4 bg-opacity-50">
+            <button
+                class="bg-green-500 hover:bg-green-600 text-white flex items-center px-4 py-2 rounded-full transition duration-150 ease-in-out">
+                <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+                WhatsApp
+            </button>
+        </div>
+    </header>
+
+    <div>
+        <header class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto my-10">
+                <h1 class="text-5xl font-bold text-gray-900 text-center mb-4">INNOVA CONSTRUCTION</h1>
+                <h2 class="text-2xl font-medium text-gray-600 text-center mb-16">Expertos en el área de la tecnología
+                </h2>
+
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="w-full md:w-1/2 mb-12 md:mb-0">
+                        <img src="https://iili.io/2zwgfGs.png" alt="Soporte" class="w-full max-w-md mx-auto">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <ul class="space-y-6 text-xl text-gray-700">
+                            <li class="flex items-center">
+                                <svg class="w-8 h-8 mr-4 text-blue-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                                Instalaciónes
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-8 h-8 mr-4 text-blue-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                                    </path>
+                                </svg>
+                                Reparación de equipos de cómputo
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-8 h-8 mr-4 text-blue-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                    </path>
+                                </svg>
+                                Y mucho más
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto my-5">
+            <h2 class="text-4xl font-bold text-gray-900 text-center mb-12 my-2">Servicio Técnico</h2>
+            <div class="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+                <form action="#" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                            <input type="text" id="nombre" name="nombre"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="apellidos"
+                                class="block text-sm font-medium text-gray-700 mb-1">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="celular" class="block text-sm font-medium text-gray-700 mb-1">Celular</label>
+                            <input type="tel" id="celular" name="celular"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="direccion"
+                                class="block text-sm font-medium text-gray-700 mb-1">Dirección</label>
+                            <input type="text" id="direccion" name="direccion"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="producto" class="block text-sm font-medium text-gray-700 mb-1">Producto</label>
+                            <select id="producto" name="producto"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="computadora">Computadoras de Escritorio</option>
+                                <option value="laptop">Laptops</option>
+                                <option value="impresora">Impresoras</option>
+                                <option value="monitor">Monitores</option>
+                                <option value="componente">Componentes Internos</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="fecha" class="block text-sm font-medium text-gray-700 mb-1">Fecha preferida para
+                                la
+                                visita</label>
+                            <input type="date" id="fecha" name="fecha"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label for="problema" class="block text-sm font-medium text-gray-700 mb-1">Describa su
+                            problema</label>
+                        <textarea id="problema" name="problema" rows="4"
+                            class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                    </div>
+                    <div class="mt-8 flex justify-center space-x-4">
+                        <button type="submit"
+                            class="px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out">Enviar</button>
+                        <button type="reset"
+                            class="px-6 py-3 bg-gray-500 text-white font-medium rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition duration-150 ease-in-out">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gray-900 text-white py-20 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6">Ponte en contacto</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Nuestro equipo de profesionales estará encantado de
+                atenderte y resolver todas tus dudas.</p>
+            <button
+                class="my-3 inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-blue-600 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M2.004 22l1.352-4.968A9.954 9.954 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.954 9.954 0 01-5.03-1.355L2.004 22zM8.391 7.308a.961.961 0 00-.371.1 1.293 1.293 0 00-.294.228c-.12.113-.188.211-.261.306A2.729 2.729 0 006.9 9.62c.002.49.13.967.33 1.413.409.902 1.082 1.857 1.971 2.742.214.213.423.427.648.626a9.448 9.448 0 003.84 2.046l.569.087c.185.01.37-.004.556-.013a1.99 1.99 0 00.833-.231c.166-.088.244-.132.383-.22 0 0 .043-.028.125-.09.135-.1.218-.171.33-.288.083-.086.155-.187.21-.302.078-.163.156-.474.188-.733.024-.198.017-.306.014-.373-.004-.107-.093-.218-.19-.265l-.582-.261s-.87-.379-1.401-.621a.498.498 0 00-.177-.041.482.482 0 00-.378.127v-.002c-.005 0-.072.057-.795.933a.35.35 0 01-.368.13 1.416 1.416 0 01-.191-.066c-.124-.052-.167-.072-.252-.109l-.005-.002a6.01 6.01 0 01-1.57-1c-.126-.11-.243-.23-.363-.346a6.296 6.296 0 01-1.02-1.268l-.059-.095a.923.923 0 01-.102-.205c-.038-.147.061-.265.061-.265s.243-.266.356-.41a4.38 4.38 0 00.263-.373c.118-.19.155-.385.093-.536-.28-.684-.57-1.365-.868-2.041-.059-.134-.234-.23-.393-.249-.054-.006-.108-.012-.162-.016a3.385 3.385 0 00-.403.004z" />
+                </svg>
+                Consulta rápida por WhatsApp
+            </button>
+        </div>
+    </div>
+</div>

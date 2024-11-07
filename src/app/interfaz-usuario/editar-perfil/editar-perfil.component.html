@@ -1,0 +1,78 @@
+<div class="bg-gray-200">
+    <div class="flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+        <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md relative">
+            <h2 class="text-2xl font-bold mb-4">Perfil</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Nombre</label>
+                    <p class="border border-gray-500 rounded-md px-3 py-2 w-full ">Daniel</p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Apellido</label>
+                    <p class="border border-gray-500 rounded-md px-3 py-2 w-full">Bueno</p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Email</label>
+                    <p class="border border-gray-500 rounded-md px-3 py-2 w-full">Gmail.com</p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Documento de identidad</label>
+                    <p class="border border-gray-500 rounded-md px-3 py-2 w-full">45234534</p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Teléfono</label>
+                    <p class="border border-gray-500 rounded-md px-3 py-2 w-full">523452345</p>
+                </div>
+                <button (click)="showEditModal = true"
+                    class="bg-black  hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                    Editar datos
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de edición -->
+    <div *ngIf="showEditModal" class="fixed inset-0 flex items-center justify-center z-50 p-4 sm:p-6 lg:p-8 overflow-y-auto"
+        style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md my-6 min-h-[300px]">
+            <h2 class="text-2xl font-bold mb-4">Editar Perfil</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="nombre-edit">Nombre</label>
+                    <input class="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black"
+                        type="text" id="nombre-edit">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="apellido-edit">Apellido</label>
+                    <input class="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black"
+                        type="text" id="apellido-edit">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="email-edit">Email</label>
+                    <input class="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black"
+                        type="email" id="email-edit">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="documento-edit">Documento de
+                        identidad</label>
+                    <input class="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black"
+                        type="text" id="documento-edit">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="telefono-edit">Teléfono</label>
+                    <input class="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black"
+                        type="tel" id="telefono-edit">
+                </div>
+                <div class="flex justify-end space-x-2 pt-4">
+                    <button (click)="closeModal()"
+                        class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded transition-colors">
+                        Cancelar
+                    </button>
+                    <button (click)="updateProfile()"
+                        class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition-colors">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
