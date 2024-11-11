@@ -14,11 +14,12 @@ import { PuestosComponent } from "../gestion-usuarios/puestos/puestos.component"
 import { RolesComponent } from "../gestion-usuarios/roles/roles.component";
 import { ServicioTecnicoComponent } from "../relaciones-proveedores/servicio-tecnico/servicio-tecnico.component";
 import { ClientesComponent } from "../gestion-usuarios/clientes/clientes.component";
+import { BoletoComponent } from "../boleto/boleto.component";
 
 @Component({
   selector: 'app-home-admin',
   standalone: true,
-  imports: [NgIf, RouterOutlet, CommonModule, InicioComponent, DashboardComponent, VentasComponent, VenderProductosComponent, ListaProductosComponent, CategoriasComponent, MarcasComponent, EmpleadosComponent, UsuariosComponent, PuestosComponent, RolesComponent, ServicioTecnicoComponent, ClientesComponent],
+  imports: [NgIf, RouterOutlet, CommonModule, InicioComponent, DashboardComponent, VentasComponent, VenderProductosComponent, ListaProductosComponent, CategoriasComponent, MarcasComponent, EmpleadosComponent, UsuariosComponent, PuestosComponent, RolesComponent, ServicioTecnicoComponent, ClientesComponent, BoletoComponent],
   templateUrl: './home-admin.component.html',
   styleUrl: './home-admin.component.css'
 })

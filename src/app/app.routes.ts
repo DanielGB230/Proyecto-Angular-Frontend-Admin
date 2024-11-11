@@ -35,6 +35,10 @@ import { PerfilUsuarioComponent } from './interfaz-usuario/perfil-usuario/perfil
 import { ProductosCatalogoComponent } from './interfaz-usuario/productos-catalogo/productos-catalogo.component';
 import { SupportPagoComponent } from './interfaz-usuario/support-pago/support-pago.component';
 import { SupportComponent } from './interfaz-usuario/support/support.component';
+/* Facturas */
+import { BoletoComponent } from './administracion/boleto/boleto.component';
+import { DnirucComponent } from './administracion/dniruc/dniruc.component';
+import { FacturaComponent } from './administracion/factura/factura.component';
 
 export const routes: Routes = [
     { path: 'auth/login', component: LoginComponent },
@@ -62,6 +66,9 @@ export const routes: Routes = [
     { path: 'administracion/gestion/usuarios/puestos/nuevo', component: NuevoPuestoComponent },
     { path: 'administracion/gestion/usuarios/cliente/nuevo', component: NuevoClienteComponent },
     { path: 'administracion/gestion/usuarios/cliente', component: ClientesComponent },
+    { path: 'boleto', component: BoletoComponent },
+    { path: 'factura', component: FacturaComponent },
+    { path: 'dniruc', component: DnirucComponent },
 
     /* { path: '**', redirectTo: 'home/admin', pathMatch: 'full' }, */
     { path: 'home/catalogo', component: HomeCatalogoComponent },
@@ -74,6 +81,10 @@ export const routes: Routes = [
     { path: 'not/found/404', component: NotFoundComponent },
     { path: 'detalle/support', component: DetalleSupportComponent },
     { path: 'pago/servicio', component: SupportPagoComponent },
+
+
     { path: '**', redirectTo: 'not/found/404', pathMatch: 'full' },
+    { path: '', redirectTo: 'home/admin', pathMatch: 'full' }
+    /* facturas: */
 
 ];

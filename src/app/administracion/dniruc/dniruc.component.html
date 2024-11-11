@@ -1,0 +1,42 @@
+<!-- src/app/components/dniruc/dniruc.component.html -->
+<div>
+    <label for="tipoDocumento">Tipo de Documento:</label>
+    <select id="tipoDocumento" [(ngModel)]="tipoDocumento">
+        <option value="dni">DNI</option>
+        <option value="ruc">RUC</option>
+    </select>
+
+    <label for="numeroDocumento">Número de Documento:</label>
+    <input id="numeroDocumento" [(ngModel)]="numeroDocumento" />
+
+    <button (click)="buscar()">Buscar</button>
+
+    <div *ngIf="resultado">
+        <h3>Resultado:</h3>
+
+        <!-- Sección para mostrar datos de DNI -->
+        <div *ngIf="tipoDocumento === 'dni'">
+            <p><strong>DNI:</strong> {{ resultado.dni }}</p>
+            <p><strong>Nombres:</strong> {{ resultado.nombres }}</p>
+            <p><strong>Apellido Paterno:</strong> {{ resultado.apellidoPaterno }}</p>
+            <p><strong>Apellido Materno:</strong> {{ resultado.apellidoMaterno }}</p>
+            <p><strong>Código de Verificación:</strong> {{ resultado.codVerifica }}</p>
+        </div>
+
+        <!-- Sección para mostrar datos de RUC -->
+        <div *ngIf="tipoDocumento === 'ruc'">
+            <p><strong>RUC:</strong> {{ resultado.ruc }}</p>
+            <p><strong>Razón Social:</strong> {{ resultado.razonSocial }}</p>
+            <p><strong>Nombre Comercial:</strong> {{ resultado.nombreComercial }}</p>
+            <p><strong>Teléfonos:</strong> {{ resultado.telefonos.join(', ') }}</p>
+            <p><strong>Estado:</strong> {{ resultado.estado }}</p>
+            <p><strong>Condición:</strong> {{ resultado.condicion }}</p>
+            <p><strong>Dirección:</strong> {{ resultado.direccion }}</p>
+            <p><strong>Departamento:</strong> {{ resultado.departamento }}</p>
+            <p><strong>Provincia:</strong> {{ resultado.provincia }}</p>
+            <p><strong>Distrito:</strong> {{ resultado.distrito }}</p>
+            <p><strong>Ubigeo:</strong> {{ resultado.ubigeo }}</p>
+            <p><strong>Capital:</strong> {{ resultado.capital }}</p>
+        </div>
+    </div>
+</div>

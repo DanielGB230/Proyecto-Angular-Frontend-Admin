@@ -1,0 +1,143 @@
+<div class="min-h-screen bg-gray-100 py-12 px-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold text-center mb-6">Detalles del Boleto</h1>
+
+        <!-- Formulario de Boleto -->
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold mb-4">Información del Boleto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label for="tipoDoc" class="block">Tipo de Documento:</label>
+                    <input id="tipoDoc" type="text" [(ngModel)]="boletoData.tipoDoc"
+                        class="mt-1 block w-full border rounded-md p-2" required />
+                </div>
+                <div>
+                    <label for="serie" class="block">Serie:</label>
+                    <input id="serie" type="text" [(ngModel)]="boletoData.serie"
+                        class="mt-1 block w-full border rounded-md p-2" required />
+                </div>
+                <div>
+                    <label for="correlativo" class="block">Correlativo:</label>
+                    <input id="correlativo" type="number" [(ngModel)]="boletoData.correlativo" min="1"
+                        class="mt-1 block w-full border rounded-md p-2" required />
+                </div>
+            </div>
+        </div>
+
+        <!-- Información del Cliente -->
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold mb-4">Información del Cliente</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="clientTipoDoc" class="block">Tipo de Documento:</label>
+                    <input id="clientTipoDoc" type="text" [(ngModel)]="boletoData.client.tipoDoc"
+                        class="mt-1 block w-full border rounded-md p-2" required />
+                </div>
+                <div>
+                    <label for="clientNumDoc" class="block">Número de Documento:</label>
+                    <input id="clientNumDoc" type="text" [(ngModel)]="boletoData.client.numDoc"
+                        class="mt-1 block w-full border rounded-md p-2" required />
+                </div>
+                <div class="col-span-full">
+                    <label for="clientRznSocial" class="block">Razón Social:</label>
+                    <input id="clientRznSocial" type="text" [(ngModel)]="boletoData.client.rznSocial"
+                        class="mt-1 block w-full border rounded-md p-2" required />
+                </div>
+            </div>
+        </div>
+
+        <!-- Detalles del Producto -->
+        <div class="">
+            <h2 class="text-xl font-semibold mb-4">Detalles del Producto</h2>
+            <div *ngFor="let detail of boletoData.details; let i = index">
+                <div class="mb-4 p-4 bg-gray-50 rounded-md shadow-sm">
+                    <label [for]="'descripcion' + i" class="">Descripción:</label>
+                    <input [id]="'descripcion' + i" type="text" [(ngModel)]="detail.descripcion" required
+                        class="mt-1 block w-full border rounded-md p-2" />
+
+                    <label [for]="'cantidad' + i" class="">Cantidad:</label>
+                    <input [id]="'cantidad' + i" type="number" [(ngModel)]="detail.cantidad" min="1" required
+                        class="mt-1 block w-full border rounded-md p-2" />
+
+                    <label [for]="'precio' + i" class="">Precio Unitario:</label>
+                    <input [id]="'precio' + i" type="number" [(ngModel)]="detail.mtoPrecioUnitario" min="0.01"
+                        step=".01" required class="mt-1 block w-full border rounded-md p-2" />
+
+                    <button (click)="removeDetail(i)" class="mt-2 text-red-600">Eliminar Producto</button>
+                </div>
+            </div>
+            <button (click)="addDetail()" class="">Agregar Producto</button>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="">
+            <button (click)="mostrarResumenDeBoleto()" class="">Ver Resumen</button>
+            <button (click)="enviarBoleto()" class="">Enviar Boleto</button>
+            <button (click)="generarPdf()" class="">Generar PDF</button>
+        </div>
+
+        <!-- Tabla con el resumen del boleto -->
+        <div *ngIf="mostrarResumen" class="mt-8 bg-white shadow-lg rounded-xl overflow-hidden">
+            <div class="px-4 py-5 sm:px-6 bg-gradient-to-r from-blue-500 to-indigo-600">
+                <h3 class="text-lg leading-6 font-medium text-white">Resumen del Boleto</h3>
+            </div>
+            <div class="border-t border-gray-200">
+                <dl>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Tipo de Documento</dt>
+                        <dd class="mt-1">{{ boletoData.tipoDoc }}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Serie</dt>
+                        <dd class="mt-1">{{ boletoData.serie }}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Correlativo</dt>
+                        <dd class="mt-1">{{ boletoData.correlativo }}
+                        </dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Razón Social del Cliente</dt>
+                        <dd class="mt-1">{{ boletoData.client.rznSocial
+                            }}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Número de Documento</dt>
+                        <dd class="mt-1">{{ boletoData.client.numDoc }}
+                        </dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500 mb-2">Detalles de Productos</dt>
+                        <dd class="mt-1 ">
+                            <ul class="border border-gray-200 rounded-md divide-y divide-gray-200">
+                                <li *ngFor="let detail of boletoData.details"
+                                    class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+                                    <div class="w-0 flex-1 flex items-center">
+                                        <span class="ml-2 flex-1 w-0 truncate">{{ detail.descripcion }}</span>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0">
+                                        {{ detail.cantidad }} x {{ detail.mtoPrecioUnitario | number:'1.2-2' }} = {{
+                                        detail.mtoPrecioUnitario * detail.cantidad | number:'1.2-2' }}
+                                    </div>
+                                </li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Total</dt>
+                        <dd class="mt-1 text-sm font-bold text-gray-90">{{
+                            boletoData.subTotal | number:'1.2-2' }}</dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <button (click)="ocultarResumen()"
+                    class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    Ocultar Resumen
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- funcional 3.2 -->

@@ -1,0 +1,98 @@
+<!-- Mostrar/Ocultar Resumen -->
+<div class="mb-4 flex space-x-2">
+    <button (click)="mostrarResumenDeFactura()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        Mostrar Resumen
+    </button>
+    <button (click)="ocultarResumen()" class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">
+        Ocultar Resumen
+    </button>
+</div>
+
+<!-- Resumen de la Factura -->
+<div *ngIf="mostrarResumen" class="bg-gray-100 p-4 rounded shadow-md mb-4">
+    <h3 class="text-lg font-semibold mb-2">Resumen de Factura</h3>
+    <p><strong>Razón Social Cliente:</strong> {{ facturaData.client.rznSocial }}</p>
+    <p><strong>RUC Empresa:</strong> {{ facturaData.company.ruc }}</p>
+    <p><strong>Total:</strong> S/ {{ facturaData.totalImpuestos }}</p>
+</div>
+
+<!-- Formulario de Factura -->
+<form (ngSubmit)="enviarFactura()" #facturaForm="ngForm" class="space-y-6">
+
+    <!-- Cliente -->
+    <fieldset class="border border-gray-300 p-4 rounded mb-4">
+        <legend class="text-lg font-semibold text-gray-700">Datos del Cliente</legend>
+        <div class="mb-4">
+            <label for="clientRznSocial" class="block text-gray-600">Razón Social</label>
+            <input type="text" id="clientRznSocial" [(ngModel)]="facturaData.client.rznSocial" name="clientRznSocial"
+                class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required
+                placeholder="Ingrese razón social" />
+        </div>
+        <div class="mb-4">
+            <label for="clientNumDoc" class="block text-gray-600">Número de Documento</label>
+            <input type="number" id="clientNumDoc" [(ngModel)]="facturaData.client.numDoc" name="clientNumDoc"
+                class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required
+                placeholder="Ingrese número de documento" />
+        </div>
+    </fieldset>
+
+    <!-- Empresa -->
+    <fieldset class="border border-gray-300 p-4 rounded mb-4">
+        <legend class="text-lg font-semibold text-gray-700">Datos de la Empresa</legend>
+        <div class="mb-4">
+            <label for="companyRuc" class="block text-gray-600">RUC</label>
+            <input type="number" id="companyRuc" [(ngModel)]="facturaData.company.ruc" name="companyRuc"
+                class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required
+                placeholder="Ingrese RUC" />
+        </div>
+        <div class="mb-4">
+            <label for="companyRazonSocial" class="block text-gray-600">Razón Social</label>
+            <input type="text" id="companyRazonSocial" [(ngModel)]="facturaData.company.razonSocial"
+                name="companyRazonSocial"
+                class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required
+                placeholder="Ingrese razón social de la empresa" />
+        </div>
+    </fieldset>
+
+    <!-- Detalles de Factura -->
+    <fieldset class="border border-gray-300 p-4 rounded mb-4">
+        <legend class="text-lg font-semibold text-gray-700">Detalles de la Factura</legend>
+        <div *ngFor="let detail of facturaData.details; let i = index" class="mb-6 space-y-4">
+            <div class="mb-2">
+                <label for="codProducto{{ i }}" class="block text-gray-600">Código de Producto</label>
+                <input type="text" id="codProducto{{ i }}" [(ngModel)]="detail.codProducto" name="codProducto{{ i }}"
+                    class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required
+                    placeholder="Ingrese código del producto" />
+            </div>
+            <div class="mb-2">
+                <label for="descripcion{{ i }}" class="block text-gray-600">Descripción</label>
+                <input type="text" id="descripcion{{ i }}" [(ngModel)]="detail.descripcion" name="descripcion{{ i }}"
+                    class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required
+                    placeholder="Ingrese descripción del producto" />
+            </div>
+            <div class="mb-2">
+                <label for="cantidad{{ i }}" class="block text-gray-600">Cantidad</label>
+                <input type="number" id="cantidad{{ i }}" [(ngModel)]="detail.cantidad" name="cantidad{{ i }}"
+                    class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required
+                    placeholder="Ingrese cantidad" />
+            </div>
+            <button type="button" (click)="removeDetail(i)"
+                class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 mt-2">Eliminar Detalle</button>
+        </div>
+        <button type="button" (click)="addDetail()"
+            class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Agregar Detalle</button>
+    </fieldset>
+
+    <!-- Enviar Factura -->
+    <div class="mb-4">
+        <button type="submit" [disabled]="!facturaForm.form.valid"
+            class="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50">Enviar
+            Factura</button>
+    </div>
+</form>
+
+<!-- Botón para Descargar PDF -->
+<div class="mt-4">
+    <button (click)="generarPdf()" class="w-full px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Descargar
+        PDF</button>
+</div>

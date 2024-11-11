@@ -93,7 +93,7 @@
                 </svg>
                 <span class="ml-3">Dashboard</span>
             </button>
-            <button (click)="navigateTo('app-ventas'); setActive('ventas')"
+            <button (click)="navigateTo('app-boleto'); setActive('ventas')"
                 [ngClass]="{'bg-[#1A1A4B]': isActive('ventas')}"
                 class="flex items-center py-2 rounded-lg text-sm w-full hover:bg-[#1A1A4B] transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -262,6 +262,9 @@
         </div>
         <div *ngIf="visibleComponent === 'app-servicio-tecnico'">
             <app-servicio-tecnico></app-servicio-tecnico>
+        </div>
+        <div *ngIf="visibleComponent === 'app-boleto'">
+            <app-boleto></app-boleto>
         </div>
     </div>
 </div>
